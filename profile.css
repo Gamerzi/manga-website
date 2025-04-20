@@ -1,0 +1,558 @@
+/* === profile-style.css === */
+
+/* --- Basic Reset & Global Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Example font */
+    line-height: 1.6;
+    background-color: #f0f2f5; /* Light greyish-blue background like screenshot */
+    color: #1c1e21; /* Dark text color */
+    font-size: 14px; /* Base font size */
+}
+
+.container {
+    max-width: 1280px; /* Wider container */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #1877f2; /* Facebook-like blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+}
+
+/* --- Button Styles --- */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.btn-outline {
+    border-color: #bec3c9;
+    color: #4b4f56;
+    background-color: #fff;
+}
+.btn-outline:hover {
+    background-color: #f5f6f7;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #1f2937; /* Dark button */
+    color: #fff;
+    border-color: #1f2937;
+}
+.btn-primary:hover {
+    background-color: #374151;
+    border-color: #374151;
+    text-decoration: none;
+}
+
+.btn-secondary {
+     background-color: #e4e6eb; /* Light gray button */
+     color: #050505;
+     border-color: #e4e6eb;
+}
+ .btn-secondary:hover {
+     background-color: #dcdfe4;
+     border-color: #dcdfe4;
+     text-decoration: none;
+ }
+
+
+/* --- Header --- */
+.site-header {
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px; /* Adjust padding */
+    min-height: 56px; /* Standard header height */
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+.logo .logo-kun {
+     color: #8a2be2; /* Example purple */
+}
+.logo .logo-manga {
+    color: #1877f2; /* Example blue */
+}
+
+
+.primary-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+.primary-nav a {
+    padding: 10px 16px;
+    color: #606770;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+.primary-nav a:hover,
+.primary-nav a.active {
+    background-color: #f0f2f5;
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-area {
+    display: flex;
+    align-items: center;
+    background-color: #f0f2f5;
+    border-radius: 20px;
+    padding: 5px;
+}
+.search-icon-btn {
+    background: none;
+    border: none;
+    color: #606770;
+    font-size: 1.1em;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+.advanced-search-link {
+    color: #1877f2;
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-left: 5px;
+    padding-right: 8px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    color: #606770;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Secondary Navigation (Genres) */
+.secondary-nav {
+    background-color: #1f2937; /* Dark background */
+    padding: 8px 0;
+}
+.secondary-nav .container {
+    padding: 0 10px; /* Less padding */
+}
+.secondary-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center genres */
+    flex-wrap: wrap;
+    gap: 5px 15px; /* Row and column gap */
+}
+.secondary-nav a {
+    color: #d1d5db; /* Light gray text */
+    font-size: 0.85em;
+    font-weight: 500;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-transform: uppercase;
+}
+.secondary-nav a:hover, .secondary-nav a.more-link:hover {
+    background-color: #4b5563;
+    color: #fff;
+    text-decoration: none;
+}
+.secondary-nav a.more-link {
+    color: #9ca3af; /* Slightly different color for More */
+}
+.secondary-nav a i {
+    margin-left: 4px;
+    font-size: 0.8em;
+}
+
+/* --- Main Content & Breadcrumbs --- */
+.main-content {
+    padding: 25px 0;
+}
+
+.breadcrumbs {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #606770;
+}
+.breadcrumbs ol {
+    list-style: none;
+}
+.breadcrumbs li {
+    display: inline-block;
+}
+.breadcrumbs li + li::before {
+    content: "/";
+    margin: 0 8px;
+    color: #ced0d4;
+}
+.breadcrumbs a {
+    color: #606770;
+}
+.breadcrumbs a:hover {
+    color: #1877f2;
+}
+.breadcrumbs li[aria-current="page"] {
+    font-weight: 600;
+    color: #1c1e21;
+}
+
+/* --- Manga Profile Section --- */
+.manga-profile {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.manga-title {
+    font-size: 2em; /* Larger title */
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #050505;
+}
+
+.profile-details-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* Cover | Info | Status */
+    gap: 30px;
+}
+
+/* Cover */
+.profile-cover img {
+    width: 200px; /* Fixed width for cover */
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #dddfe2;
+}
+
+/* Info Block */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Space between rating, meta, buttons */
+}
+
+.rating-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.rating-block .stars {
+    color: #ffb400; /* Yellow for stars */
+    font-size: 1.3em;
+}
+.rating-block .stars .far { /* Style for empty stars */
+    color: #ccd0d5;
+}
+.rating-block .rating-value {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #050505;
+}
+
+/* Metadata */
+.meta-data dl {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.meta-data div {
+    display: flex; /* Align dt and dd */
+    flex-wrap: wrap; /* Allow genres to wrap */
+    gap: 8px;
+    align-items: baseline;
+}
+.meta-data dt {
+    font-weight: 600;
+    color: #606770;
+    width: 90px; /* Fixed width for labels */
+    flex-shrink: 0;
+}
+.meta-data dd {
+    color: #1c1e21;
+    flex-grow: 1;
+}
+.meta-data dd a {
+    color: #1877f2;
+    font-size: 0.95em;
+    background-color: #e7f3ff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+.meta-data dd a:hover {
+    background-color: #d0e6ff;
+    text-decoration: none;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px; /* Add some space above buttons */
+}
+.action-buttons .btn {
+    padding: 10px 20px; /* Larger buttons */
+}
+
+/* Status Block */
+.profile-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    gap: 20px;
+    border-left: 1px solid #e4e6eb; /* Separator line */
+    padding-left: 30px;
+    min-width: 180px; /* Give it some minimum width */
+}
+.status-item .label {
+    display: block;
+    font-weight: 600;
+    color: #606770;
+    margin-bottom: 4px;
+    font-size: 0.9em;
+}
+.status-item .value {
+    font-weight: 600;
+    font-size: 1em;
+    color: #050505;
+}
+.status-item .status-ongoing {
+    color: #31a24c; /* Green for ongoing */
+}
+.interaction-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.interaction-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #606770;
+    font-size: 0.95em;
+}
+.interaction-item i {
+    font-size: 1.5em;
+    color: #1f2937; /* Dark icon color */
+    width: 25px; /* Align icons */
+    text-align: center;
+}
+
+/* --- Chapter List Section --- */
+.chapter-list-section {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 20px 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.chapter-list-section h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e4e6eb;
+    padding-bottom: 10px;
+}
+.chapter-list-wrapper ul {
+    list-style: none;
+    max-height: 400px; /* Example max height */
+    overflow-y: auto; /* Add scroll if list is long */
+}
+.chapter-list-wrapper li {
+    padding: 10px 5px;
+    border-bottom: 1px solid #f0f2f5; /* Very light separator */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chapter-list-wrapper li:last-child {
+    border-bottom: none;
+}
+.chapter-list-wrapper a {
+    color: #050505;
+    font-weight: 500;
+}
+.chapter-list-wrapper a:hover {
+    color: #1877f2;
+}
+.chapter-date {
+    font-size: 0.85em;
+    color: #606770;
+}
+
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #ffffff;
+    color: #606770;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.85em;
+    border-top: 1px solid #e4e6eb;
+}
+.footer-nav {
+    margin-top: 8px;
+}
+.footer-nav a {
+    color: #606770;
+    margin: 0 8px;
+}
+.footer-nav a:hover {
+    color: #1877f2;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 1024px) {
+    .profile-details-grid {
+        grid-template-columns: auto 1fr; /* Cover | Info+Status */
+        gap: 25px;
+    }
+    .profile-status {
+         grid-row: 2; /* Move status below cover on this layout */
+         grid-column: 1 / 2; /* Span only first column */
+         border-left: none;
+         padding-left: 0;
+         border-top: 1px solid #e4e6eb;
+         padding-top: 20px;
+         margin-top: 20px;
+         min-width: auto;
+         flex-direction: row; /* Arrange status/interaction horizontally */
+         align-items: center;
+         justify-content: space-around;
+    }
+    .profile-info {
+         grid-row: 1 / 3; /* Info spans both rows */
+         grid-column: 2 / 3;
+    }
+     .secondary-nav ul {
+         justify-content: flex-start; /* Align left on smaller screens */
+     }
+}
+
+@media (max-width: 768px) {
+     .header-top-content {
+         flex-wrap: wrap;
+         justify-content: center; /* Center items when wrapped */
+         padding: 10px;
+     }
+     .primary-nav { order: 3; width: 100%; margin-top: 10px; }
+     .primary-nav ul { justify-content: center; }
+     .header-actions { order: 2; margin-top: 5px; } /* Actions below logo */
+
+    .profile-details-grid {
+        grid-template-columns: 1fr; /* Stack everything */
+        gap: 20px;
+    }
+     .profile-cover {
+         margin: 0 auto; /* Center cover */
+         width: 180px; /* Smaller cover */
+     }
+     .profile-info {
+         grid-row: auto;
+         grid-column: auto;
+         align-items: center; /* Center info content */
+         text-align: center;
+     }
+      .meta-data div {
+          flex-direction: column; /* Stack dt/dd */
+          align-items: center;
+          gap: 2px;
+      }
+      .meta-data dt { width: auto; }
+      .meta-data dd { text-align: center; }
+      .action-buttons { justify-content: center; }
+
+     .profile-status {
+         grid-row: auto;
+         grid-column: auto;
+         flex-direction: column; /* Stack status vertically again */
+         align-items: center;
+         gap: 15px;
+         padding-top: 15px;
+         margin-top: 15px;
+     }
+     .interaction-items {
+         flex-direction: row; /* Icons side-by-side */
+         gap: 25px;
+     }
+
+     .manga-title { font-size: 1.6em; text-align: center;}
+     .manga-profile { padding: 16px; }
+     .chapter-list-section { padding: 16px; }
+}
+
+@media (max-width: 480px) {
+     body { font-size: 13px; }
+     .container { padding: 0 10px; }
+     .header-top-content { min-height: auto; }
+     .logo a { font-size: 1.5em; }
+     .search-area { display: none; } /* Hide search area */
+     .auth-buttons .btn { padding: 6px 10px; font-size: 0.9em;}
+     .secondary-nav a { font-size: 0.8em; padding: 4px 6px; }
+
+     .profile-cover { width: 150px; }
+     .manga-title { font-size: 1.4em; }
+     .rating-block .stars { font-size: 1.1em; }
+     .rating-block .rating-value { font-size: 1.3em; }
+     .action-buttons .btn { padding: 8px 16px; width: 48%; } /* Make buttons wider */
+     .interaction-items { gap: 15px; }
+     .interaction-item i { font-size: 1.3em; }
+     .chapter-list-wrapper li { flex-direction: column; align-items: flex-start; gap: 4px; }
+     .chapter-date { margin-left: 0; }
+}

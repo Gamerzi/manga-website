@@ -1,0 +1,428 @@
+/* === home-style.css === */
+
+/* --- Basic Reset & Body --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Slightly lighter gray */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px; /* Adjusted width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #007bff; /* Blue links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%; /* Responsive images */
+    height: auto;
+    display: block; /* Remove extra space below images */
+    vertical-align: middle; /* Align images better */
+}
+
+/* --- Header --- */
+.site-header {
+    background-color: #fff; /* White header */
+    color: #333; /* Dark text */
+    padding: 10px 0;
+    border-bottom: 1px solid #e7e7e7; /* Lighter border */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 20px; /* Space below header */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 15px;
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333; /* Dark logo text */
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px; /* Space between nav items */
+}
+
+.main-nav li {
+     /* Removed margin-left, using gap now */
+}
+
+.main-nav a {
+    color: #555; /* Slightly lighter nav text */
+    padding: 8px 12px; /* Adjust padding */
+    font-weight: 500;
+    text-transform: uppercase; /* Match KunManga style */
+    font-size: 0.9em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+    text-decoration: none;
+}
+.main-nav ul li a i { /* Style for dropdown arrow */
+    font-size: 0.8em;
+    margin-left: 4px;
+}
+
+.search-bar {
+    margin-left: auto; /* Push search to the right if space allows */
+    display: flex; /* Align input and button */
+}
+.search-bar input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    min-width: 200px; /* Give search some width */
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar button i { /* Style search icon */
+    color: #fff;
+}
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+.user-actions {
+    display: flex;
+    gap: 15px;
+    margin-left: 15px; /* Space from search bar */
+}
+.user-actions a {
+    color: #777; /* Gray icons */
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+.user-actions a:hover {
+    color: #007bff; /* Blue on hover */
+}
+
+
+/* --- Homepage Specific Styles --- */
+
+/* Main Content Sections */
+.latest-updates, .main-grid {
+    margin-top: 30px;
+    margin-bottom: 40px; /* More space at bottom */
+}
+
+.latest-updates h2, .main-grid h2 {
+    font-size: 1.6em; /* Slightly larger heading */
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    color: #333;
+    font-weight: 600;
+     /* Reverting to a simple bottom border, matching screenshot */
+    border-bottom: 1px solid #dee2e6;
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Example: Different font like screenshot */
+}
+
+
+/* Manga List Base Styles */
+.manga-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Reset margin */
+}
+
+/* Horizontal List (Latest Updates) */
+.horizontal-list {
+    display: grid;
+    /* Adjust column count and min width as needed */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Slightly wider min */
+    gap: 25px; /* Increased gap */
+}
+
+.manga-item-compact {
+    background-color: #fff;
+    padding: 20px; /* More padding */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Slightly stronger shadow */
+    border: 1px solid #e9ecef; /* Match border color */
+    transition: box-shadow 0.3s ease;
+}
+.manga-item-compact:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+
+/* Grid View (Main Grid) */
+.grid-view {
+    display: grid;
+    /* Adjust columns and min width for cards */
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); /* Slightly wider */
+    gap: 30px; /* Increased gap */
+}
+
+.manga-item-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    border: 1px solid #e9ecef;
+    overflow: hidden; /* Prevents content spilling */
+    display: flex;
+    flex-direction: column; /* Stack image and info */
+    position: relative; /* Needed for top badge */
+    transition: box-shadow 0.3s ease;
+}
+.manga-item-card:hover {
+     box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.manga-cover-link img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 2.8; /* Approximate aspect ratio for manga covers */
+    object-fit: cover; /* Ensure image covers the area */
+    display: block;
+    border-bottom: 1px solid #e9ecef; /* Add border below image */
+    /* Remove transition from here if applied on card hover */
+}
+/* Add hover effect on card instead */
+.manga-item-card:hover .manga-cover-link img {
+    /* opacity: 0.85; Example hover effect */
+}
+
+
+/* Manga Item Content Styling (Shared) */
+.manga-title {
+    font-size: 1.05em; /* Slightly larger title */
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-weight: 600; /* Bolder title */
+     /* Ensure titles don't wrap excessively */
+     display: -webkit-box;
+     -webkit-line-clamp: 2; /* Limit to 2 lines */
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+     min-height: 2.8em; /* Reserve space for 2 lines */
+}
+.manga-title a {
+    color: #212529; /* Darker text color */
+}
+.manga-title a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: none;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #ffc107; /* Gold color for stars */
+}
+.rating i { /* Ensure stars are consistent */
+    line-height: 1;
+}
+.rating span {
+    margin-left: 5px;
+    font-weight: bold;
+    color: #495057; /* Darker gray for rating number */
+    font-size: 0.95em;
+}
+
+.chapter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85em;
+}
+.chapter-list li {
+    margin-bottom: 6px; /* Slightly more space */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6c757d; /* Gray text */
+}
+.chapter-list a {
+    color: #007bff;
+    margin-right: 5px;
+}
+.chapter-list a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+
+/* Badges and Dates */
+.badge {
+    display: inline-block;
+    padding: 3px 7px; /* Slightly larger badge */
+    font-size: 0.7em; /* Smaller font in badge */
+    font-weight: bold;
+    border-radius: 3px;
+    margin-left: auto; /* Push badge to the right */
+    line-height: 1; /* Adjust line height */
+    text-transform: uppercase;
+}
+.badge.new {
+    background-color: #dc3545; /* Red for 'new' */
+    color: #fff;
+}
+.badge.top-badge {
+    position: absolute;
+    top: 10px; /* Adjust position */
+    left: 10px;
+    z-index: 1; /* Make sure it's above the image */
+}
+
+.date {
+    color: #6c757d;
+    margin-left: auto; /* Push date to the right */
+    white-space: nowrap; /* Prevent date wrapping */
+    font-size: 0.95em;
+}
+
+/* Manga Info Padding (for cards) */
+.manga-info {
+    padding: 15px;
+    flex-grow: 1; /* Allow info section to grow */
+    background-color: #fff; /* Ensure white background */
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #f8f9fa; /* Match body background */
+    color: #6c757d; /* Gray footer text */
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px; /* More space above footer */
+    font-size: 0.9em;
+    border-top: 1px solid #dee2e6; /* Border top */
+}
+
+.footer-nav {
+    margin-top: 10px;
+}
+
+.footer-nav a {
+    color: #007bff; /* Blue links in footer */
+    margin: 0 10px;
+}
+
+.footer-nav a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* --- Responsive Adjustments for Homepage --- */
+@media (max-width: 992px) {
+    .grid-view {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); /* Adjust breakpoint */
+        gap: 20px;
+    }
+     .horizontal-list {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .search-bar input[type="text"]{
+        min-width: 150px; /* Smaller search bar */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        justify-content: space-between;
+    }
+    .main-nav {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .main-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .search-bar {
+        order: 2;
+        margin-left: 10px;
+        flex-grow: 1;
+    }
+     .user-actions {
+        order: 2;
+        margin-left: 0;
+    }
+
+    .grid-view {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+     .horizontal-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+     .latest-updates h2, .main-grid h2 {
+        font-size: 1.4em; /* Smaller headings on mobile */
+    }
+}
+
+@media (max-width: 576px) {
+     .main-nav ul {
+        font-size: 0.8em;
+        gap: 5px;
+    }
+    .main-nav ul li a {
+        padding: 6px 8px;
+    }
+     .manga-title {
+        font-size: 0.95em;
+         min-height: 2.7em; /* Adjust min height */
+    }
+    .grid-view {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+    }
+     .horizontal-list {
+        grid-template-columns: repeat(1, 1fr); /* Stack latest updates */
+    }
+    .manga-item-compact, .manga-info {
+         padding: 15px; /* Consistent padding */
+    }
+    .user-actions {
+        gap: 10px;
+    }
+    .search-bar input[type="text"] {
+        min-width: 100px; /* Further reduce search */
+    }
+     .latest-updates, .main-grid {
+        margin-bottom: 25px;
+    }
+}

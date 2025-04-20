@@ -1,0 +1,465 @@
+/* === Full CSS for Chapter Page (styles.css / chapter-style.css) === */
+
+/* --- Basic Reset & Body --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #e9ecef; /* Chapter page background */
+    color: #333;
+}
+
+.container {
+    max-width: 1100px; /* Container width for chapter page */
+    margin: 0 auto;
+    padding: 0 15px; /* Slightly less padding */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle; /* Better image alignment */
+}
+
+/* --- Improved Header (CSS Only Changes) --- */
+.site-header {
+    background-color: #ffffff; /* White background */
+    color: #333333;           /* Dark text */
+    padding: 15px 0;          /* Increased vertical padding */
+    border-bottom: 1px solid #e0e0e0; /* Lighter, subtle border */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+    position: sticky;         /* Optional: make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Space out logo, nav, search */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;       /* Add gap between items when wrapped */
+}
+
+.logo a {
+    font-size: 1.9em;  /* Slightly larger logo */
+    font-weight: 700; /* Bolder */
+    color: #222;       /* Darker logo text */
+    text-decoration: none;
+    letter-spacing: -0.5px; /* Optional: Adjust letter spacing */
+}
+
+/* --- Improved Main Navigation (CSS Only Changes) --- */
+.main-nav {
+     /* No specific margin needed here with flexbox */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Vertically align nav items */
+    gap: 15px; /* Space between list items via gap */
+    padding: 0; /* Ensure no default padding */
+    margin: 0; /* Ensure no default margin */
+}
+
+.main-nav li {
+    margin-left: 0; /* Remove default margin, use gap */
+}
+
+.main-nav a {
+    color: #444;      /* Dark gray nav link color */
+    padding: 8px 16px; /* More padding */
+    border-radius: 5px; /* Slightly more rounded corners */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 500;  /* Medium weight */
+    font-size: 0.95em;
+    text-transform: uppercase; /* Uppercase text */
+    white-space: nowrap; /* Prevent links from wrapping */
+}
+
+.main-nav a:hover,
+.main-nav a.active { /* You'd add 'active' class via JS */
+    background-color: #f5f5f5; /* Very light gray background on hover */
+    color: #0069d9;        /* Stronger blue on hover */
+    text-decoration: none;
+}
+
+/* --- Improved Search Bar (CSS Only Changes) --- */
+.search-bar {
+    display: flex;      /* Use flex to align input and button */
+    align-items: center; /* Vertically align items */
+    margin-left: auto;   /* Push search bar to the right */
+}
+
+.search-bar input[type="text"] {
+    padding: 9px 12px; /* Adjust padding for height */
+    border: 1px solid #ced4da; /* Standard border color */
+    border-right: none; /* Remove border between input and button */
+    border-radius: 4px 0 0 4px; /* Round left corners */
+    outline: none;
+    font-size: 0.9em;
+    min-width: 200px; /* Give it a decent minimum width */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #80bdff; /* Blue border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtle glow on focus */
+}
+
+.search-bar button {
+    padding: 9px 15px; /* Match input height, more horizontal padding */
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    /* border-left: none; */ /* Effectively handled by input's border-right: none */
+    border-radius: 0 4px 4px 0; /* Round right corners */
+    cursor: pointer;
+    outline: none;
+    font-size: 0.9em; /* Match input text size */
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    line-height: 1.6; /* Ensure text aligns well vertically */
+}
+
+.search-bar button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+     /* No specific styling needed for the main wrapper itself */
+     padding-top: 20px; /* Add some space below sticky header */
+}
+
+
+/* --- Breadcrumbs --- */
+.breadcrumbs {
+    margin: 0 0 20px 0; /* Adjusted margin */
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    font-size: 0.9em;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+    color: #6c757d;
+}
+
+.breadcrumbs li + li::before {
+    content: "/"; /* Using slash separator */
+    margin: 0 8px;
+    color: #ced4da;
+}
+
+.breadcrumbs a {
+    color: #007bff;
+}
+.breadcrumbs li[aria-current="page"] {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* --- Chapter Viewer --- */
+.chapter-viewer {
+    background-color: #fff;
+    margin-bottom: 25px; /* Increased bottom margin */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Contain children borders/backgrounds */
+}
+
+.chapter-header {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding: 25px 20px 20px 20px; /* Add padding */
+}
+
+.chapter-header h1 {
+    font-size: 1.9em; /* Slightly larger */
+    margin-bottom: 8px;
+    color: #212529;
+    line-height: 1.3;
+}
+.chapter-header h2 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: #495057;
+    font-weight: 500; /* Less bold */
+}
+.reading-mode-info {
+    font-size: 0.85em;
+    color: #6c757d;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* --- Chapter Navigation --- */
+.chapter-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 20px; /* Adjusted padding */
+    flex-wrap: wrap;
+    background-color: #f8f9fa; /* Light background for nav sections */
+}
+.top-nav {
+     border-bottom: 1px solid #dee2e6;
+     /* Removed top border radius as it's inside chapter-viewer now */
+}
+.bottom-nav {
+     border-top: 1px solid #dee2e6;
+     justify-content: space-between; /* Spread out bottom nav items */
+      /* Removed bottom border radius */
+}
+
+
+.nav-button {
+    display: inline-flex; /* Use inline-flex for better alignment */
+    align-items: center;
+    justify-content: center;
+    padding: 9px 22px; /* Adjusted padding */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95em; /* Slightly smaller font */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    text-decoration: none; /* Ensure links don't get underlined */
+    white-space: nowrap;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-button.disabled {
+    background-color: #adb5bd;
+    color: #f8f9fa;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.chapter-navigation select {
+    padding: 9px 12px; /* Match button height */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.95em; /* Match button font size */
+    min-width: 180px; /* Adjusted width */
+    background-color: #fff;
+    height: 38px; /* Explicit height to match buttons better */
+    line-height: 1.6;
+}
+
+.social-share {
+    display: flex; /* Align items */
+    align-items: center;
+    gap: 8px; /* Space between items */
+    margin-left: auto; /* Push right on bottom nav */
+}
+
+.social-share span {
+    /* margin-right: 10px; */ /* Replaced by gap */
+    color: #495057;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+.social-share a {
+    /* margin: 0 5px; */ /* Replaced by gap */
+    font-weight: bold;
+    color: #007bff;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+.social-share a:hover {
+    color: #0056b3;
+}
+
+/* --- Manga Pages --- */
+.manga-pages {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px; /* Reading width */
+    background-color: #000; /* Black background */
+}
+
+.manga-pages img {
+    margin: 0 auto; /* Center images horizontally */
+    margin-bottom: 1px; /* Minimal gap between pages */
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+/* --- Comments Section (Placeholder) --- */
+.comments-section {
+    background-color: #fff;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.comments-section h3 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    font-size: 1.3em;
+    color: #343a40;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #343a40; /* Dark Footer */
+    color: #adb5bd; /* Light Gray Text */
+    text-align: center;
+    padding: 25px 0; /* Increased padding */
+    margin-top: 40px; /* More space above footer */
+    font-size: 0.9em;
+}
+
+.footer-nav {
+    margin-top: 10px;
+}
+
+.footer-nav a {
+    color: #ced4da;
+    margin: 0 12px; /* More spacing */
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* --- Responsiveness Adjustments --- */
+@media (max-width: 992px) {
+    .search-bar input[type="text"] {
+        min-width: 150px;
+    }
+    .main-nav a {
+        padding: 7px 12px;
+    }
+     .main-nav ul {
+        gap: 10px;
+    }
+    .manga-pages {
+        max-width: 90%; /* Allow slightly wider reading on tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack header items */
+        gap: 15px;
+    }
+    .main-nav {
+        width: 100%; /* Nav takes full width */
+        order: 2; /* Nav below logo */
+    }
+    .main-nav ul {
+        justify-content: center; /* Center nav items */
+        flex-wrap: wrap;
+    }
+    .search-bar {
+        margin-left: 0; /* Reset margin */
+        width: 90%; /* Control width */
+        max-width: 400px;
+        margin: 5px auto; /* Center search bar */
+        order: 3; /* Search below nav */
+    }
+    .search-bar input[type="text"] {
+        flex-grow: 1; /* Allow input to fill space */
+        min-width: 100px;
+    }
+    .chapter-navigation {
+        gap: 10px;
+        padding: 15px;
+    }
+    .nav-button, .chapter-navigation select {
+        padding: 8px 15px;
+        font-size: 0.9em;
+        height: auto; /* Reset fixed height */
+    }
+    .chapter-navigation select {
+        min-width: 150px;
+    }
+    .bottom-nav {
+        flex-direction: column; /* Stack bottom nav items */
+        gap: 15px;
+        align-items: center; /* Center items */
+    }
+     .social-share {
+        margin-left: 0; /* Reset margin */
+        margin-top: 5px;
+        justify-content: center; /* Center social links */
+        width: 100%;
+    }
+    .chapter-header h1 { font-size: 1.6em; }
+    .chapter-header h2 { font-size: 1.2em; }
+    .manga-pages {
+        max-width: 100%; /* Full width on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+     .logo a {
+        font-size: 1.6em;
+    }
+    .main-nav a {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+    .search-bar {
+        width: 95%;
+    }
+     .search-bar input[type="text"], .search-bar button {
+        font-size: 0.85em;
+        padding: 8px 10px;
+    }
+    .container {
+        padding: 0 10px; /* Less padding on very small screens */
+    }
+     .nav-button, .chapter-navigation select {
+        width: 100%; /* Stack nav buttons/select */
+        max-width: 280px;
+        margin: 5px auto;
+    }
+     .chapter-header { padding: 20px 15px 15px 15px; }
+     .comments-section { padding: 15px; }
+     .breadcrumbs { font-size: 0.8em; padding: 8px 10px;}
+     .footer-nav a { margin: 0 8px; }
+}
