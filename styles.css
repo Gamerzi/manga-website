@@ -12,6 +12,9 @@ body {
     line-height: 1.6;
     background-color: #e9ecef; /* Chapter page background */
     color: #333;
+    /* Adjust based on the actual height of the sticky ad bar (image height + padding) */
+    /* 90px (image) + 5px padding-top + 5px padding-bottom + ~5px buffer = 105px */
+    padding-bottom: 105px;
 }
 
 .container {
@@ -306,6 +309,35 @@ img {
     color: #0056b3;
 }
 
+/* --- Ad Placeholder Styling --- */
+.ad-container {
+    padding: 0; /* No extra padding */
+    margin: 20px auto 20px auto; /* Vertical spacing and horizontal centering */
+    max-width: 800px; /* Match manga reading width */
+    /* background-color: #f0f0f0; */ /* Optional: light background for ad block */
+}
+
+.ad-container img {
+    margin: 0 auto; /* Center images */
+    margin-bottom: 10px; /* Space between stacked ads */
+    display: block;
+    width: 100%; /* Make ad image fill container width */
+    height: auto;
+    vertical-align: top;
+}
+.ad-container img:last-child {
+    margin-bottom: 0; /* No margin below the last ad in the container */
+}
+
+/* Adjust spacing specifically if needed */
+.pre-manga-ads {
+    margin-top: 0; /* Reduce top margin if needed */
+}
+.post-manga-ads {
+     margin-bottom: 0; /* Reduce bottom margin if needed */
+}
+
+
 /* --- Manga Pages --- */
 .manga-pages {
     padding: 0;
@@ -365,6 +397,33 @@ img {
     text-decoration: underline;
 }
 
+/* --- Sticky Footer Ad Styling --- */
+.sticky-footer-ad {
+    position: fixed; /* Stick to viewport */
+    bottom: 0;       /* Align to bottom */
+    left: 0;         /* Align to left */
+    width: 100%;     /* Full viewport width */
+    background-color: rgba(240, 240, 240, 0.95); /* Light, slightly transparent background */
+    padding: 5px 0;  /* Reduced Padding top/bottom for a tighter fit */
+    text-align: center; /* Center the ad image */
+    z-index: 999;    /* Below header (1000) but above most content */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Shadow on top edge */
+    border-top: 1px solid #ccc; /* Subtle top border */
+    /* Optional: Add a max-height to the container itself if needed */
+    /* max-height: 100px; */ /* e.g. 90px image + 5px top padding + 5px bottom padding */
+    overflow: hidden; /* Hide any potential overflow */
+}
+
+.sticky-footer-ad img {
+    display: inline-block; /* Needed for text-align center and vertical align */
+    vertical-align: middle; /* Align vertically within the container */
+    max-width: 95%;    /* Max width relative to container */
+    max-height: 90px;  /* <<< KEY FIX: Explicitly limit the image height */
+    height: auto;      /* Maintain aspect ratio *up to* max-height */
+    width: auto;       /* Allow width to adjust based on height if needed */
+}
+
+
 /* --- Responsiveness Adjustments --- */
 @media (max-width: 992px) {
     .search-bar input[type="text"] {
@@ -376,7 +435,7 @@ img {
      .main-nav ul {
         gap: 10px;
     }
-    .manga-pages {
+    .manga-pages, .ad-container { /* Apply to ad containers too */
         max-width: 90%; /* Allow slightly wider reading on tablet */
     }
 }
@@ -430,8 +489,16 @@ img {
     }
     .chapter-header h1 { font-size: 1.6em; }
     .chapter-header h2 { font-size: 1.2em; }
-    .manga-pages {
+    .manga-pages, .ad-container { /* Apply to ad containers too */
         max-width: 100%; /* Full width on mobile */
+    }
+     body {
+        /* Re-calculate or keep the same if ad size doesn't change significantly */
+        padding-bottom: 105px; /* Or adjust if needed */
+    }
+    .sticky-footer-ad {
+        padding: 5px 0;
+        /* No need to change img max-height unless the ad unit itself changes */
     }
 }
 
@@ -462,4 +529,366 @@ img {
      .comments-section { padding: 15px; }
      .breadcrumbs { font-size: 0.8em; padding: 8px 10px;}
      .footer-nav a { margin: 0 8px; }
+     /* Adjust body padding if sticky ad is smaller on mobile */
+     /* body { padding-bottom: 80px; } */ /* Example if ad becomes 60px high */
 }
+
+/* === Additions for Privacy Policy Page === */
+
+/* Style for the main content box holding the policy text */
+.content-box {
+    background-color: #fff;
+    padding: 30px 40px; /* Generous padding inside the box */
+    margin-top: 20px;   /* Space below breadcrumbs/header */
+    margin-bottom: 30px;/* Space above footer */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 800px;  /* Limit width for readability */
+    margin-left: auto;  /* Center the box */
+    margin-right: auto; /* Center the box */
+}
+
+.privacy-policy-content h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em; /* Larger title */
+    color: #333;
+    border-bottom: 1px solid #eee; /* Separator line */
+    padding-bottom: 15px;
+}
+
+.privacy-policy-content h2 {
+    font-size: 1.4em; /* Section headings */
+    color: #444;
+    margin-top: 30px; /* Space above headings */
+    margin-bottom: 10px;/* Space below headings */
+}
+
+.privacy-policy-content p {
+    font-size: 1em; /* Standard text size */
+    line-height: 1.7; /* Improve readability */
+    color: #555;
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+/* --- Responsive Adjustments for Content Box --- */
+@media (max-width: 768px) {
+    .content-box {
+        padding: 20px 25px; /* Less padding on smaller screens */
+        max-width: 100%; /* Allow full width */
+    }
+    .privacy-policy-content h1 {
+        font-size: 1.7em;
+    }
+    .privacy-policy-content h2 {
+        font-size: 1.25em;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-box {
+        padding: 15px 20px;
+    }
+     .privacy-policy-content h1 {
+        font-size: 1.5em;
+    }
+    .privacy-policy-content h2 {
+        font-size: 1.15em;
+    }
+    .privacy-policy-content p {
+        font-size: 0.95em;
+    }
+}
+
+/* Ensure body padding is still correct */
+body {
+    /* ... other body styles ... */
+    padding-bottom: 105px; /* Keep padding for sticky footer ad */
+}
+@media (max-width: 768px) {
+     body { padding-bottom: 105px; } /* Keep padding */
+}
+/* Add other media query adjustments for body padding if needed */
+
+
+/* === Additions for About Us Page === */
+
+.about-us-split {
+    display: flex;
+    align-items: center; /* Vertically align items if they have different heights */
+    gap: 50px;         /* Space between text and image */
+    padding: 40px 0;   /* Padding above/below the split section */
+    margin-bottom: 20px; /* Space below the split section */
+}
+
+.about-text-content {
+    flex: 1.2; /* Give text slightly more space (adjust ratio as needed) */
+    max-width: 60%; /* Prevent text block from becoming too wide */
+}
+
+.about-image-content {
+    flex: 0.8; /* Give image slightly less space */
+    text-align: center; /* Center image if container is wider */
+}
+
+.about-image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: slightly rounded corners for the image */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Optional subtle shadow */
+}
+
+.about-category {
+    text-transform: uppercase;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #6c757d; /* Muted grey color */
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.about-text-content h2 {
+    font-size: 2.3em; /* Main heading size */
+    font-weight: 700;
+    color: #212529; /* Dark heading color */
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.about-text-content p {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #555; /* Standard paragraph text color */
+    margin-bottom: 18px;
+}
+
+.about-text-content ul {
+    list-style: disc; /* Standard bullet points */
+    margin-left: 20px; /* Indent list */
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.about-text-content li {
+    margin-bottom: 10px; /* Space between list items */
+    line-height: 1.6;
+    color: #555;
+}
+
+.about-text-content strong {
+ color: #333; /* Make bold text slightly darker */
+}
+
+/* Simple button style (adapt if you have a global .btn class) */
+.btn.about-button {
+    display: inline-block;
+    background-color: #343a40; /* Dark background like reference */
+    color: #fff;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 15px; /* Space above button */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.btn.about-button:hover {
+    background-color: #555; /* Slightly lighter on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Optional Separator Line */
+hr.about-separator {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 30px 0;
+}
+
+
+/* --- Responsive Adjustments for About Us Split --- */
+@media (max-width: 992px) {
+    .about-us-split {
+        gap: 30px; /* Reduce gap */
+    }
+    .about-text-content h2 {
+        font-size: 2em;
+    }
+     .about-text-content {
+        flex: 1; /* Adjust flex ratio if needed */
+        max-width: 55%;
+    }
+    .about-image-content {
+        flex: 1;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .about-us-split {
+        flex-direction: column; /* Stack text and image vertically */
+        padding: 20px 0;
+        gap: 40px; /* Add vertical gap when stacked */
+    }
+     .about-text-content,
+     .about-image-content {
+        flex: none; /* Reset flex */
+        max-width: 100%; /* Allow full width when stacked */
+        width: 100%;
+    }
+     .about-text-content h2 {
+        font-size: 1.8em;
+    }
+    .about-image-content {
+        order: -1; /* Optional: Move image above text on mobile */
+        max-width: 450px; /* Limit image width when stacked */
+        margin: 0 auto; /* Center the image */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-text-content h2 {
+        font-size: 1.6em;
+    }
+    .btn.about-button {
+        width: 100%; /* Make button full width */
+        text-align: center;
+        padding: 14px 20px;
+    }
+     .about-image-content {
+        max-width: 100%;
+    }
+}
+
+/* Ensure body padding is still correct */
+body {
+    /* ... other body styles ... */
+    padding-bottom: 105px; /* Keep padding for sticky footer ad */
+}
+@media (max-width: 768px) {
+     body { padding-bottom: 105px; } /* Keep padding */
+}
+/* Add other media query adjustments for body padding if needed */
+
+
+/* === Additions for Contact Us Page === */
+
+/* Use the existing .content-box for background, padding, shadow etc. */
+.contact-page-content {
+    /* Inherits from .content-box */
+    text-align: center; /* Center align text within the box */
+}
+
+.contact-page-content h1 {
+    /* Inherits base h1 styles */
+    font-size: 2.8em; /* Large title like reference */
+    margin-bottom: 25px;
+    color: #333;
+    padding-bottom: 15px;
+    /* border-bottom: 1px solid #eee; */ /* Optional: remove border if preferred */
+}
+
+.contact-intro {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    max-width: 650px; /* Limit width of intro text */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-methods {
+    margin: 30px 0; /* Space around the contact details */
+    display: inline-block; /* Allow centering via text-align on parent */
+    text-align: left; /* Align text inside this block left */
+}
+
+.contact-method {
+    margin-bottom: 15px; /* Space between email and phone */
+    font-size: 1.1em; /* Slightly larger font for details */
+}
+
+.contact-label {
+    display: inline-block;
+    font-weight: 600;
+    color: #333;
+    min-width: 60px; /* Align labels slightly */
+}
+
+.contact-link {
+    color: #007bff; /* Standard link color */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.contact-privacy {
+    font-size: 0.9em;
+    color: #6c757d; /* Muted color for privacy note */
+    margin-top: 25px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr.contact-separator {
+    border: 0;
+    height: 1px;
+    background-color: #eee; /* Light separator */
+    margin: 35px auto; /* Space above/below separator */
+    max-width: 200px; /* Short separator */
+}
+
+
+/* --- Responsive Adjustments for Contact Us --- */
+@media (max-width: 768px) {
+    .contact-page-content h1 {
+        font-size: 2.2em;
+    }
+    .contact-intro {
+        font-size: 1em;
+    }
+    .contact-method {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-page-content h1 {
+        font-size: 1.9em;
+    }
+    .contact-intro {
+        font-size: 0.95em;
+    }
+    .contact-methods {
+        width: 100%; /* Full width on small screens */
+    }
+     .contact-method {
+        /* Optional: Stack label and link */
+        /* display: block; */
+        /* text-align: center; */
+    }
+    .contact-label {
+        min-width: auto; /* Remove min-width */
+        margin-right: 5px;
+    }
+}
+
+/* Ensure body padding is still correct */
+body {
+    /* ... other body styles ... */
+    padding-bottom: 105px; /* Keep padding for sticky footer ad */
+}
+@media (max-width: 768px) {
+     body { padding-bottom: 105px; } /* Keep padding */
+}
+/* Add other media query adjustments for body padding if needed */
