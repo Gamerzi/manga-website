@@ -1,0 +1,894 @@
+/* === Full CSS for Chapter Page (styles.css / chapter-style.css) === */
+
+/* --- Basic Reset & Body --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #e9ecef; /* Chapter page background */
+    color: #333;
+    /* Adjust based on the actual height of the sticky ad bar (image height + padding) */
+    /* 90px (image) + 5px padding-top + 5px padding-bottom + ~5px buffer = 105px */
+    padding-bottom: 105px;
+}
+
+.container {
+    max-width: 1100px; /* Container width for chapter page */
+    margin: 0 auto;
+    padding: 0 15px; /* Slightly less padding */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle; /* Better image alignment */
+}
+
+/* --- Improved Header (CSS Only Changes) --- */
+.site-header {
+    background-color: #ffffff; /* White background */
+    color: #333333;           /* Dark text */
+    padding: 15px 0;          /* Increased vertical padding */
+    border-bottom: 1px solid #e0e0e0; /* Lighter, subtle border */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+    position: sticky;         /* Optional: make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Space out logo, nav, search */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;       /* Add gap between items when wrapped */
+}
+
+.logo a {
+    font-size: 1.9em;  /* Slightly larger logo */
+    font-weight: 700; /* Bolder */
+    color: #222;       /* Darker logo text */
+    text-decoration: none;
+    letter-spacing: -0.5px; /* Optional: Adjust letter spacing */
+}
+
+/* --- Improved Main Navigation (CSS Only Changes) --- */
+.main-nav {
+     /* No specific margin needed here with flexbox */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Vertically align nav items */
+    gap: 15px; /* Space between list items via gap */
+    padding: 0; /* Ensure no default padding */
+    margin: 0; /* Ensure no default margin */
+}
+
+.main-nav li {
+    margin-left: 0; /* Remove default margin, use gap */
+}
+
+.main-nav a {
+    color: #444;      /* Dark gray nav link color */
+    padding: 8px 16px; /* More padding */
+    border-radius: 5px; /* Slightly more rounded corners */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 500;  /* Medium weight */
+    font-size: 0.95em;
+    text-transform: uppercase; /* Uppercase text */
+    white-space: nowrap; /* Prevent links from wrapping */
+}
+
+.main-nav a:hover,
+.main-nav a.active { /* You'd add 'active' class via JS */
+    background-color: #f5f5f5; /* Very light gray background on hover */
+    color: #0069d9;        /* Stronger blue on hover */
+    text-decoration: none;
+}
+
+/* --- Improved Search Bar (CSS Only Changes) --- */
+.search-bar {
+    display: flex;      /* Use flex to align input and button */
+    align-items: center; /* Vertically align items */
+    margin-left: auto;   /* Push search bar to the right */
+}
+
+.search-bar input[type="text"] {
+    padding: 9px 12px; /* Adjust padding for height */
+    border: 1px solid #ced4da; /* Standard border color */
+    border-right: none; /* Remove border between input and button */
+    border-radius: 4px 0 0 4px; /* Round left corners */
+    outline: none;
+    font-size: 0.9em;
+    min-width: 200px; /* Give it a decent minimum width */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #80bdff; /* Blue border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtle glow on focus */
+}
+
+.search-bar button {
+    padding: 9px 15px; /* Match input height, more horizontal padding */
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    /* border-left: none; */ /* Effectively handled by input's border-right: none */
+    border-radius: 0 4px 4px 0; /* Round right corners */
+    cursor: pointer;
+    outline: none;
+    font-size: 0.9em; /* Match input text size */
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    line-height: 1.6; /* Ensure text aligns well vertically */
+}
+
+.search-bar button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+     /* No specific styling needed for the main wrapper itself */
+     padding-top: 20px; /* Add some space below sticky header */
+}
+
+
+/* --- Breadcrumbs --- */
+.breadcrumbs {
+    margin: 0 0 20px 0; /* Adjusted margin */
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    font-size: 0.9em;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+    color: #6c757d;
+}
+
+.breadcrumbs li + li::before {
+    content: "/"; /* Using slash separator */
+    margin: 0 8px;
+    color: #ced4da;
+}
+
+.breadcrumbs a {
+    color: #007bff;
+}
+.breadcrumbs li[aria-current="page"] {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* --- Chapter Viewer --- */
+.chapter-viewer {
+    background-color: #fff;
+    margin-bottom: 25px; /* Increased bottom margin */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Contain children borders/backgrounds */
+}
+
+.chapter-header {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding: 25px 20px 20px 20px; /* Add padding */
+}
+
+.chapter-header h1 {
+    font-size: 1.9em; /* Slightly larger */
+    margin-bottom: 8px;
+    color: #212529;
+    line-height: 1.3;
+}
+.chapter-header h2 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: #495057;
+    font-weight: 500; /* Less bold */
+}
+.reading-mode-info {
+    font-size: 0.85em;
+    color: #6c757d;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* --- Chapter Navigation --- */
+.chapter-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 20px; /* Adjusted padding */
+    flex-wrap: wrap;
+    background-color: #f8f9fa; /* Light background for nav sections */
+}
+.top-nav {
+     border-bottom: 1px solid #dee2e6;
+     /* Removed top border radius as it's inside chapter-viewer now */
+}
+.bottom-nav {
+     border-top: 1px solid #dee2e6;
+     justify-content: space-between; /* Spread out bottom nav items */
+      /* Removed bottom border radius */
+}
+
+
+.nav-button {
+    display: inline-flex; /* Use inline-flex for better alignment */
+    align-items: center;
+    justify-content: center;
+    padding: 9px 22px; /* Adjusted padding */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95em; /* Slightly smaller font */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    text-decoration: none; /* Ensure links don't get underlined */
+    white-space: nowrap;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-button.disabled {
+    background-color: #adb5bd;
+    color: #f8f9fa;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.chapter-navigation select {
+    padding: 9px 12px; /* Match button height */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.95em; /* Match button font size */
+    min-width: 180px; /* Adjusted width */
+    background-color: #fff;
+    height: 38px; /* Explicit height to match buttons better */
+    line-height: 1.6;
+}
+
+.social-share {
+    display: flex; /* Align items */
+    align-items: center;
+    gap: 8px; /* Space between items */
+    margin-left: auto; /* Push right on bottom nav */
+}
+
+.social-share span {
+    /* margin-right: 10px; */ /* Replaced by gap */
+    color: #495057;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+.social-share a {
+    /* margin: 0 5px; */ /* Replaced by gap */
+    font-weight: bold;
+    color: #007bff;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+.social-share a:hover {
+    color: #0056b3;
+}
+
+/* --- Ad Placeholder Styling --- */
+.ad-container {
+    padding: 0; /* No extra padding */
+    margin: 20px auto 20px auto; /* Vertical spacing and horizontal centering */
+    max-width: 800px; /* Match manga reading width */
+    /* background-color: #f0f0f0; */ /* Optional: light background for ad block */
+}
+
+.ad-container img {
+    margin: 0 auto; /* Center images */
+    margin-bottom: 10px; /* Space between stacked ads */
+    display: block;
+    width: 100%; /* Make ad image fill container width */
+    height: auto;
+    vertical-align: top;
+}
+.ad-container img:last-child {
+    margin-bottom: 0; /* No margin below the last ad in the container */
+}
+
+/* Adjust spacing specifically if needed */
+.pre-manga-ads {
+    margin-top: 0; /* Reduce top margin if needed */
+}
+.post-manga-ads {
+     margin-bottom: 0; /* Reduce bottom margin if needed */
+}
+
+
+/* --- Manga Pages --- */
+.manga-pages {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px; /* Reading width */
+    background-color: #000; /* Black background */
+}
+
+.manga-pages img {
+    margin: 0 auto; /* Center images horizontally */
+    margin-bottom: 1px; /* Minimal gap between pages */
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+/* --- Comments Section (Placeholder) --- */
+.comments-section {
+    background-color: #fff;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.comments-section h3 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    font-size: 1.3em;
+    color: #343a40;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #343a40; /* Dark Footer */
+    color: #adb5bd; /* Light Gray Text */
+    text-align: center;
+    padding: 25px 0; /* Increased padding */
+    margin-top: 40px; /* More space above footer */
+    font-size: 0.9em;
+}
+
+.footer-nav {
+    margin-top: 10px;
+}
+
+.footer-nav a {
+    color: #ced4da;
+    margin: 0 12px; /* More spacing */
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* --- Sticky Footer Ad Styling --- */
+.sticky-footer-ad {
+    position: fixed; /* Stick to viewport */
+    bottom: 0;       /* Align to bottom */
+    left: 0;         /* Align to left */
+    width: 100%;     /* Full viewport width */
+    background-color: rgba(240, 240, 240, 0.95); /* Light, slightly transparent background */
+    padding: 5px 0;  /* Reduced Padding top/bottom for a tighter fit */
+    text-align: center; /* Center the ad image */
+    z-index: 999;    /* Below header (1000) but above most content */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Shadow on top edge */
+    border-top: 1px solid #ccc; /* Subtle top border */
+    /* Optional: Add a max-height to the container itself if needed */
+    /* max-height: 100px; */ /* e.g. 90px image + 5px top padding + 5px bottom padding */
+    overflow: hidden; /* Hide any potential overflow */
+}
+
+.sticky-footer-ad img {
+    display: inline-block; /* Needed for text-align center and vertical align */
+    vertical-align: middle; /* Align vertically within the container */
+    max-width: 95%;    /* Max width relative to container */
+    max-height: 90px;  /* <<< KEY FIX: Explicitly limit the image height */
+    height: auto;      /* Maintain aspect ratio *up to* max-height */
+    width: auto;       /* Allow width to adjust based on height if needed */
+}
+
+
+/* --- Responsiveness Adjustments --- */
+@media (max-width: 992px) {
+    .search-bar input[type="text"] {
+        min-width: 150px;
+    }
+    .main-nav a {
+        padding: 7px 12px;
+    }
+     .main-nav ul {
+        gap: 10px;
+    }
+    .manga-pages, .ad-container { /* Apply to ad containers too */
+        max-width: 90%; /* Allow slightly wider reading on tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack header items */
+        gap: 15px;
+    }
+    .main-nav {
+        width: 100%; /* Nav takes full width */
+        order: 2; /* Nav below logo */
+    }
+    .main-nav ul {
+        justify-content: center; /* Center nav items */
+        flex-wrap: wrap;
+    }
+    .search-bar {
+        margin-left: 0; /* Reset margin */
+        width: 90%; /* Control width */
+        max-width: 400px;
+        margin: 5px auto; /* Center search bar */
+        order: 3; /* Search below nav */
+    }
+    .search-bar input[type="text"] {
+        flex-grow: 1; /* Allow input to fill space */
+        min-width: 100px;
+    }
+    .chapter-navigation {
+        gap: 10px;
+        padding: 15px;
+    }
+    .nav-button, .chapter-navigation select {
+        padding: 8px 15px;
+        font-size: 0.9em;
+        height: auto; /* Reset fixed height */
+    }
+    .chapter-navigation select {
+        min-width: 150px;
+    }
+    .bottom-nav {
+        flex-direction: column; /* Stack bottom nav items */
+        gap: 15px;
+        align-items: center; /* Center items */
+    }
+     .social-share {
+        margin-left: 0; /* Reset margin */
+        margin-top: 5px;
+        justify-content: center; /* Center social links */
+        width: 100%;
+    }
+    .chapter-header h1 { font-size: 1.6em; }
+    .chapter-header h2 { font-size: 1.2em; }
+    .manga-pages, .ad-container { /* Apply to ad containers too */
+        max-width: 100%; /* Full width on mobile */
+    }
+     body {
+        /* Re-calculate or keep the same if ad size doesn't change significantly */
+        padding-bottom: 105px; /* Or adjust if needed */
+    }
+    .sticky-footer-ad {
+        padding: 5px 0;
+        /* No need to change img max-height unless the ad unit itself changes */
+    }
+}
+
+@media (max-width: 480px) {
+     .logo a {
+        font-size: 1.6em;
+    }
+    .main-nav a {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+    .search-bar {
+        width: 95%;
+    }
+     .search-bar input[type="text"], .search-bar button {
+        font-size: 0.85em;
+        padding: 8px 10px;
+    }
+    .container {
+        padding: 0 10px; /* Less padding on very small screens */
+    }
+     .nav-button, .chapter-navigation select {
+        width: 100%; /* Stack nav buttons/select */
+        max-width: 280px;
+        margin: 5px auto;
+    }
+     .chapter-header { padding: 20px 15px 15px 15px; }
+     .comments-section { padding: 15px; }
+     .breadcrumbs { font-size: 0.8em; padding: 8px 10px;}
+     .footer-nav a { margin: 0 8px; }
+     /* Adjust body padding if sticky ad is smaller on mobile */
+     /* body { padding-bottom: 80px; } */ /* Example if ad becomes 60px high */
+}
+
+/* === Additions for Privacy Policy Page === */
+
+/* Style for the main content box holding the policy text */
+.content-box {
+    background-color: #fff;
+    padding: 30px 40px; /* Generous padding inside the box */
+    margin-top: 20px;   /* Space below breadcrumbs/header */
+    margin-bottom: 30px;/* Space above footer */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 800px;  /* Limit width for readability */
+    margin-left: auto;  /* Center the box */
+    margin-right: auto; /* Center the box */
+}
+
+.privacy-policy-content h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em; /* Larger title */
+    color: #333;
+    border-bottom: 1px solid #eee; /* Separator line */
+    padding-bottom: 15px;
+}
+
+.privacy-policy-content h2 {
+    font-size: 1.4em; /* Section headings */
+    color: #444;
+    margin-top: 30px; /* Space above headings */
+    margin-bottom: 10px;/* Space below headings */
+}
+
+.privacy-policy-content p {
+    font-size: 1em; /* Standard text size */
+    line-height: 1.7; /* Improve readability */
+    color: #555;
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+/* --- Responsive Adjustments for Content Box --- */
+@media (max-width: 768px) {
+    .content-box {
+        padding: 20px 25px; /* Less padding on smaller screens */
+        max-width: 100%; /* Allow full width */
+    }
+    .privacy-policy-content h1 {
+        font-size: 1.7em;
+    }
+    .privacy-policy-content h2 {
+        font-size: 1.25em;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-box {
+        padding: 15px 20px;
+    }
+     .privacy-policy-content h1 {
+        font-size: 1.5em;
+    }
+    .privacy-policy-content h2 {
+        font-size: 1.15em;
+    }
+    .privacy-policy-content p {
+        font-size: 0.95em;
+    }
+}
+
+/* Ensure body padding is still correct */
+body {
+    /* ... other body styles ... */
+    padding-bottom: 105px; /* Keep padding for sticky footer ad */
+}
+@media (max-width: 768px) {
+     body { padding-bottom: 105px; } /* Keep padding */
+}
+/* Add other media query adjustments for body padding if needed */
+
+
+/* === Additions for About Us Page === */
+
+.about-us-split {
+    display: flex;
+    align-items: center; /* Vertically align items if they have different heights */
+    gap: 50px;         /* Space between text and image */
+    padding: 40px 0;   /* Padding above/below the split section */
+    margin-bottom: 20px; /* Space below the split section */
+}
+
+.about-text-content {
+    flex: 1.2; /* Give text slightly more space (adjust ratio as needed) */
+    max-width: 60%; /* Prevent text block from becoming too wide */
+}
+
+.about-image-content {
+    flex: 0.8; /* Give image slightly less space */
+    text-align: center; /* Center image if container is wider */
+}
+
+.about-image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: slightly rounded corners for the image */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Optional subtle shadow */
+}
+
+.about-category {
+    text-transform: uppercase;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #6c757d; /* Muted grey color */
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.about-text-content h2 {
+    font-size: 2.3em; /* Main heading size */
+    font-weight: 700;
+    color: #212529; /* Dark heading color */
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.about-text-content p {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #555; /* Standard paragraph text color */
+    margin-bottom: 18px;
+}
+
+.about-text-content ul {
+    list-style: disc; /* Standard bullet points */
+    margin-left: 20px; /* Indent list */
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.about-text-content li {
+    margin-bottom: 10px; /* Space between list items */
+    line-height: 1.6;
+    color: #555;
+}
+
+.about-text-content strong {
+ color: #333; /* Make bold text slightly darker */
+}
+
+/* Simple button style (adapt if you have a global .btn class) */
+.btn.about-button {
+    display: inline-block;
+    background-color: #343a40; /* Dark background like reference */
+    color: #fff;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 15px; /* Space above button */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.btn.about-button:hover {
+    background-color: #555; /* Slightly lighter on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Optional Separator Line */
+hr.about-separator {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 30px 0;
+}
+
+
+/* --- Responsive Adjustments for About Us Split --- */
+@media (max-width: 992px) {
+    .about-us-split {
+        gap: 30px; /* Reduce gap */
+    }
+    .about-text-content h2 {
+        font-size: 2em;
+    }
+     .about-text-content {
+        flex: 1; /* Adjust flex ratio if needed */
+        max-width: 55%;
+    }
+    .about-image-content {
+        flex: 1;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .about-us-split {
+        flex-direction: column; /* Stack text and image vertically */
+        padding: 20px 0;
+        gap: 40px; /* Add vertical gap when stacked */
+    }
+     .about-text-content,
+     .about-image-content {
+        flex: none; /* Reset flex */
+        max-width: 100%; /* Allow full width when stacked */
+        width: 100%;
+    }
+     .about-text-content h2 {
+        font-size: 1.8em;
+    }
+    .about-image-content {
+        order: -1; /* Optional: Move image above text on mobile */
+        max-width: 450px; /* Limit image width when stacked */
+        margin: 0 auto; /* Center the image */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-text-content h2 {
+        font-size: 1.6em;
+    }
+    .btn.about-button {
+        width: 100%; /* Make button full width */
+        text-align: center;
+        padding: 14px 20px;
+    }
+     .about-image-content {
+        max-width: 100%;
+    }
+}
+
+/* Ensure body padding is still correct */
+body {
+    /* ... other body styles ... */
+    padding-bottom: 105px; /* Keep padding for sticky footer ad */
+}
+@media (max-width: 768px) {
+     body { padding-bottom: 105px; } /* Keep padding */
+}
+/* Add other media query adjustments for body padding if needed */
+
+
+/* === Additions for Contact Us Page === */
+
+/* Use the existing .content-box for background, padding, shadow etc. */
+.contact-page-content {
+    /* Inherits from .content-box */
+    text-align: center; /* Center align text within the box */
+}
+
+.contact-page-content h1 {
+    /* Inherits base h1 styles */
+    font-size: 2.8em; /* Large title like reference */
+    margin-bottom: 25px;
+    color: #333;
+    padding-bottom: 15px;
+    /* border-bottom: 1px solid #eee; */ /* Optional: remove border if preferred */
+}
+
+.contact-intro {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    max-width: 650px; /* Limit width of intro text */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-methods {
+    margin: 30px 0; /* Space around the contact details */
+    display: inline-block; /* Allow centering via text-align on parent */
+    text-align: left; /* Align text inside this block left */
+}
+
+.contact-method {
+    margin-bottom: 15px; /* Space between email and phone */
+    font-size: 1.1em; /* Slightly larger font for details */
+}
+
+.contact-label {
+    display: inline-block;
+    font-weight: 600;
+    color: #333;
+    min-width: 60px; /* Align labels slightly */
+}
+
+.contact-link {
+    color: #007bff; /* Standard link color */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.contact-privacy {
+    font-size: 0.9em;
+    color: #6c757d; /* Muted color for privacy note */
+    margin-top: 25px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr.contact-separator {
+    border: 0;
+    height: 1px;
+    background-color: #eee; /* Light separator */
+    margin: 35px auto; /* Space above/below separator */
+    max-width: 200px; /* Short separator */
+}
+
+
+/* --- Responsive Adjustments for Contact Us --- */
+@media (max-width: 768px) {
+    .contact-page-content h1 {
+        font-size: 2.2em;
+    }
+    .contact-intro {
+        font-size: 1em;
+    }
+    .contact-method {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-page-content h1 {
+        font-size: 1.9em;
+    }
+    .contact-intro {
+        font-size: 0.95em;
+    }
+    .contact-methods {
+        width: 100%; /* Full width on small screens */
+    }
+     .contact-method {
+        /* Optional: Stack label and link */
+        /* display: block; */
+        /* text-align: center; */
+    }
+    .contact-label {
+        min-width: auto; /* Remove min-width */
+        margin-right: 5px;
+    }
+}
+
+/* Ensure body padding is still correct */
+body {
+    /* ... other body styles ... */
+    padding-bottom: 105px; /* Keep padding for sticky footer ad */
+}
+@media (max-width: 768px) {
+     body { padding-bottom: 105px; } /* Keep padding */
+}
+/* Add other media query adjustments for body padding if needed */

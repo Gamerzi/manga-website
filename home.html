@@ -3,220 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MangaClone - Read Manga Online</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Add Font Awesome for icons (optional, for stars/etc) -->
+    <title>Manga Box List Inspired Layout</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 </head>
 <body>
 
     <header class="site-header">
-        <div class="container header-content">
+        <div class="container header-container">
             <div class="logo">
-                <a href="index.html">MangaClone</a> <!-- Link to homepage -->
+                <img src="placeholder-logo.png" alt="FanMTL Logo">
+            </div>
+            <div class="header-center">
+                <form class="search-form" action="#" method="get">
+                    <input type="search" name="query" placeholder="Search novels..." aria-label="Search novels">
+                    <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+                </form>
             </div>
             <nav class="main-nav">
-                <ul>
-                    <li><a href="#">ROMANCE</a></li>
-                    <li><a href="#">MANHUA</a></li>
-                    <li><a href="#">SHOUJO</a></li>
-                    <li><a href="#">DRAMA</a></li>
-                    <li><a href="#">ONE SHOT</a></li>
-                    <li><a href="#">MORE <i class="fas fa-caret-down"></i></a></li>
-                    <!-- Add other nav items if needed -->
-                </ul>
+                <a href="#">Home</a>
+                <a href="about.html">About</a>
+                <a href="contactus.html">Contact</a>
             </nav>
-             <div class="search-bar">
-                <input type="text" placeholder="Search manga...">
-                <button><i class="fas fa-search"></i></button>
-            </div>
-            <!-- Add User Icons if desired -->
-            <div class="user-actions">
-                 <a href="#" title="Bookmarks"><i class="fas fa-bookmark"></i></a>
-                 <a href="#" title="Login/Profile"><i class="fas fa-user"></i></a>
-            </div>
         </div>
     </header>
 
-    <main class="main-content">
-        <div class="container">
-
-            <!-- Section for Latest Updates (Top row in screenshot) -->
-            <section class="latest-updates">
-                <h2>Latest Updates</h2>
-                <div class="manga-list horizontal-list">
-                    <!-- Manga Item 1 -->
-                    <article class="manga-item-compact">
-                        <h3 class="manga-title"><a href="profile.html">The Regressed Son of a Duke is an...</a></h3>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>4.7</span>
-                        </div>
-                        <ul class="chapter-list">
-                            <li><a href="#">Chapter 71</a> <span class="badge new">NEW</span></li>
-                            <li><a href="#">Chapter 70</a> <span class="date">April 13, 2025</span></li>
-                        </ul>
-                    </article>
-
-                    <!-- Manga Item 2 -->
-                     <article class="manga-item-compact">
-                        <h3 class="manga-title"><a href="profile.html">I will live as a supporting role in...</a></h3>
-                         <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i> <!-- Example of empty star -->
-                            <span>4.3</span>
-                        </div>
-                        <ul class="chapter-list">
-                            <li><a href="#">Chapter 86</a> <span class="badge new">NEW</span></li>
-                            <li><a href="#">Chapter 85</a> <span class="date">April 12, 2025</span></li>
-                        </ul>
-                    </article>
-
-                     <!-- Manga Item 3 -->
-                    <article class="manga-item-compact">
-                        <h3 class="manga-title"><a href="profile.html">Married to my boss</a></h3>
-                         <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                             <i class="fas fa-star-half-alt"></i>
-                            <span>4.7</span>
-                        </div>
-                        <ul class="chapter-list">
-                            <li><a href="#">Chapter 98</a> <span class="badge new">NEW</span></li>
-                            <li><a href="#">Chapter 97</a> <span class="date">April 7, 2025</span></li>
-                        </ul>
-                    </article>
-
-                    <!-- Manga Item 4 -->
-                    <article class="manga-item-compact">
-                        <h3 class="manga-title"><a href="profile.html">The Chick-Class Hunter is Filial!</a></h3>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-                        <ul class="chapter-list">
-                             <li><a href="#">Chapter 28</a> <span class="badge new">NEW</span></li>
-                            <li><a href="#">Chapter 27</a> <span class="date">April 14, 2025</span></li>
-                        </ul>
-                    </article>
-                     <!-- Add more compact items if desired -->
+    <main class="container">
+       <section class="filter-section">
+            <div class="filter-group">
+                <h3>Genre / Category</h3>
+                <div class="tag-list">
+                    <a href="#" class="tag-button">All</a>
+                    <a href="bill.html" class="tag-button active">Billionaire</a>
+                    <a href="ash.html" class="tag-button">Action</a>
+                    <a href="idle.html" class="tag-button">Romance</a>
                 </div>
-            </section>
-
-            <!-- Section for Main Manga Grid (Bottom rows in screenshot) -->
-            <section class="main-grid">
-                 <h2>Popular Manga</h2> <!-- Or just remove heading if not desired -->
-                 <div class="manga-list grid-view">
-
-                    <!-- Manga Card 1 -->
-                    <article class="manga-item-card">
-                        <a href="profile.html" class="manga-cover-link"> <!-- LINK TO CHAPTER PAGE -->
-                            <!-- IMPORTANT: Replace with actual cover image URL or local path -->
-                            <img src="https://kunmanga.com/wp-content/uploads/2024/10/I-Saved-You-but-Im-Not-Responsible-350x476.webp" alt="I Saved You, but I'm Not Responsible Cover">
-                        </a>
-                        <div class="manga-info">
-                             <!-- LINK TO CHAPTER PAGE (Title) -->
-                            <h3 class="manga-title"><a href="profile.html">I Saved You, but I'm Not Responsible</a></h3>
-                             <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                <span>4.5</span>
-                            </div>
-                            <ul class="chapter-list">
-                                <li><a href="#">Chapter 37</a> <span class="badge new">NEW</span></li>
-                                <li><a href="#">Chapter 36</a> <span class="date">March 1, 2025</span></li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Manga Card 2 -->
-                    <article class="manga-item-card">
-                         <a href="#" class="manga-cover-link">
-                             <img src="https://kunmanga.com/wp-content/uploads/2023/08/I-Wont-Go-Back-to-My-Family-Who-Abandoned-Me-kun-350x476.jpg" alt="I Won't Go Back to My Family Who... Cover">
-                         </a>
-                        <div class="manga-info">
-                            <h3 class="manga-title"><a href="profile.html">I Won't Go Back to My Family Who...</a></h3>
-                            <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                                <span>4.4</span>
-                            </div>
-                             <ul class="chapter-list">
-                                <li><a href="#">Chapter 87</a> <span class="badge new">NEW</span></li>
-                                <li><a href="#">Chapter 86</a> <span class="date">NEW</span></li> <!-- Date sometimes replaced by NEW -->
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Manga Card 3 -->
-                    <article class="manga-item-card">
-                        <a href="#" class="manga-cover-link">
-                            <img src="https://kunmanga.com/wp-content/uploads/2024/04/The-White-Wolfs-Bride-350x476.jpeg" alt="The White Wolf's Bride Cover">
-                         </a>
-                        <div class="manga-info">
-                            <h3 class="manga-title"><a href="profile.html">The White Wolf's Bride</a></h3>
-                             <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                <span>4.9</span>
-                            </div>
-                             <ul class="chapter-list">
-                                <li><a href="#">Chapter 72</a> <span class="badge new">NEW</span></li>
-                                <li><a href="#">Chapter 71</a> <span class="date">April 12, 2025</span></li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Manga Card 4 -->
-                    <article class="manga-item-card">
-                         <a href="#" class="manga-cover-link">
-                             <img src="https://kunmanga.com/wp-content/uploads/2022/08/I-Didnt-Save-You-To-Get-Proposed-To-kunmanga-350x476.jpg" alt="I Didn't Save You To Get... Cover">
-                         </a>
-                        <div class="manga-info">
-                             <span class="badge new top-badge">NEW</span> <!-- Some have badge on top -->
-                            <h3 class="manga-title"><a href="profile.html">I Didn't Save You To Get...</a></h3>
-                            <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
-                                <span>3.7</span>
-                            </div>
-                             <ul class="chapter-list">
-                                <li><a href="#">Chapter 90</a> <span class="badge new">NEW</span></li>
-                                <li><a href="#">Chapter 89</a> <span class="date">April 12, 2025</span></li>
-                            </ul>
-                        </div>
-                    </article>
-
-                     <!-- Add more manga cards as needed -->
-
-                 </div>
-            </section>
-
-        </div> <!-- / .container -->
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>© 2023 MangaClone. All rights reserved. (This is a clone for educational purposes).</p>
-            <nav class="footer-nav">
-                <a href="about.html">About Us</a> |
-                <a href="contactus.html">Contact</a> |
-                <a href="privacy.html">Privacy Policy</a> |
-                <a href="">Terms of Service</a>
+            </div>
+            <div class="filter-group">
+                <h3>Status</h3>
+                <div class="tag-list">
+                    <a href="#" class="tag-button">All</a>
+                    <a href="idle.html" class="tag-button active">Completed</a>
+                    <a href="ash.html" class="tag-button">Ongoing</a>
+                </div>
+            </div>
+             <div class="filter-group">
+                <h3>Sort By</h3>
+                <div class="tag-list">
+                    <a href="bill.html" class="tag-button active">Popular</a>
+                    <a href="ash.html" class="tag-button">New</a>
+                    <a href="idle.html" class="tag-button">Updates</a>
+                </div>
+            </div>
+        </section>
+        <section class="novel-list-section">
+            <nav class="pagination top-pagination">
+                <span class="page-numbers current">1</span>
+                <a href="#" class="page-numbers">2</a>
+                <a href="#" class="page-numbers next">></a>
+                <a href="#" class="page-numbers last">>></a>
             </nav>
-        </div>
-    </footer>
+            <div class="list-separator"></div>
 
+            <div class="novel-grid">
+                <article class="novel-item">
+                    <a href="#" class="novel-cover-link">
+                        <img src="1st.jpeg" alt="Idle Guy Cover" class="novel-cover">
+                    </a>
+                    <div class="novel-details">
+                        <h4 class="novel-title"><a href="idle.html">idle guy</a></h4>
+                        <p class="novel-first-chapter">Chapter 1: The Man Who Slept Through Fire</p>
+                        <p class="novel-meta">
+                            <span class="meta-item"><i class="fas fa-book-open"></i> 30 Chapters</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> ≈ 10 days ago</span>
+                            <span class="meta-item"><i class="fas fa-check-circle"></i> <span class="Status--Completed">Status: Completed</span></span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="novel-item">
+                    <a href="#" class="novel-cover-link">
+                        <img src="2nd.jpeg" alt="Guarding the Billionaire's Blossom Cover" class="novel-cover">
+                    </a>
+                    <div class="novel-details">
+                        <h4 class="novel-title"><a href="bill.html">Guarding the Billionaire's Blossom</a></h4>
+                        <p class="novel-meta">
+                            <span class="meta-item"><i class="fas fa-book-open"></i> 8 Chapters</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> ≈ 25 days ago</span>
+                            <span class="meta-item"><i class="fas fa-check-circle"></i> <span class="Status--Ongoing">Status: Ongoing</span></span>
+                        </p>
+                    </div>
+                </article>
+
+                 <article class="novel-item">
+                    <a href="#" class="novel-cover-link">
+                        <img src="3rd.jpeg" alt="Ashes of the Forgotten Cover" class="novel-cover">
+                    </a>
+                    <div class="novel-details">
+                        <h4 class="novel-title"><a href="ash.html">Ashes of the Forgotten</a></h4>
+                        <p class="novel-meta">
+                            <span class="meta-item"><i class="fas fa-book-open"></i> 5 Chapters</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> ≈ 5 days ago</span>
+                            <span class="meta-item"><i class="fas fa-check-circle"></i> <span class="Status--Ongoing">Status: Ongoing</span></span>
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+             <nav class="pagination bottom-pagination">
+                <span class="page-numbers current">1</span>
+                <a href="#" class="page-numbers">2</a>
+                <a href="#" class="page-numbers next">></a>
+                <a href="#" class="page-numbers last">>></a>
+            </nav>
+        </section>
+    </main>
+     <footer class="site-footer">
+        <div class="container footer-container">
+             <div class="footer-logo">
+                 <img src="placeholder-logo.png" alt="FanMTL Logo">
+                 <p>MangaBox.com</p>
+                 <p class="copyright">© 2025 mangabox.com</p>
+             </div>
+             <div class="footer-links">
+                 <ul class="link-column">
+                     <li><a href="bill.html">Most Popular</a></li>
+                     <li><a href="./chapters/30.html">Latest Chapters</a></li>
+                     <li><a href="ash.html">Recent Novels</a></li>
+                     <li><a href="idle.html">Action</a></li>
+                 </ul>
+                 <ul class="link-column">
+                     <li><a href="privacy.html">Privacy Policy</a></li>
+                     <li><a href="#">Terms of Service</a></li>
+                     <li><a href="about.html">About Us</a></li>
+                     <li><a href="contactus.html">Contact Us</a></li>
+                 </ul>
+             </div>
+         </div>
+     </footer>
     <script src="script.js"></script>
 </body>
 </html>

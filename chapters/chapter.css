@@ -1,0 +1,267 @@
+/* === Styles for Chapter Page Elements === */
+
+.chapter-container {
+    max-width: 800px; /* Adjust content width as needed */
+    margin: 20px auto 40px auto; /* Top/Bottom margin, centered */
+    padding: 20px 30px; /* Padding inside the container */
+    background-color: #fff; /* Or inherit */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Optional subtle shadow */
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+.chapter-header {
+     margin-bottom: 30px; /* Space below header */
+     padding-bottom: 20px; /* Space above border */
+     border-bottom: 1px solid #eee; /* Separator line */
+     text-align: center; /* Center chapter titles */
+}
+
+.chapter-header .story-title {
+    margin-bottom: 5px; /* Space between story title and chapter title */
+}
+
+.chapter-header .story-title a {
+    color: #555;
+    text-decoration: none;
+    font-size: 1.1em; /* Slightly smaller than chapter title */
+    font-weight: normal;
+}
+
+ .chapter-header .story-title a:hover {
+    color: #007bff; /* Link color on hover */
+ }
+
+ .chapter-header .chapter-title {
+    font-size: 2em; /* Prominent chapter title */
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #333;
+    font-weight: bold;
+ }
+
+#chapter-content p {
+    line-height: 1.7; /* Improve readability */
+    margin-bottom: 1.6em; /* Spacing between paragraphs */
+    font-size: 1.1em; /* Adjust reading text size */
+    color: #333; /* Standard text color */
+    text-align: justify; /* Optional: Justify text */
+    -webkit-hyphens: auto; /* Optional: Improve justification */
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+#chapter-content hr { /* Style for scene breaks */
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0)); /* Faded line */
+    margin: 3em 0; /* More vertical space around scene breaks */
+}
+
+#chapter-content strong, #chapter-content b { /* Style bold text */
+     font-weight: 600;
+}
+#chapter-content em, #chapter-content i { /* Style italic text */
+     font-style: italic;
+     color: #555; /* Slightly different color for emphasis */
+}
+
+
+/* --- Ad Placeholders --- */
+.ad-placeholder {
+    background-color: #f8f9fa; /* Very light grey */
+    border: 1px dashed #ced4da; /* Light dashed border */
+    padding: 15px;
+    margin: 35px auto; /* Space around ad */
+    text-align: center;
+    color: #6c757d; /* Muted text color */
+    font-size: 0.9em;
+    min-height: 90px; /* Minimum height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.ad-placeholder img {
+     max-width: 100%;
+     height: auto;
+     margin-top: 10px; /* Space between label and image */
+}
+
+.ad-placeholder .ad-label {
+     font-size: 0.7em;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     margin-bottom: 10px;
+     display: block; /* Ensure it takes its own line */
+}
+
+/* Ad Button Style (Middle Ad) */
+.ad-placeholder .ad-buttons button {
+     background-color: #2e7d32; /* Darker Green */
+     border: none;
+     color: white;
+     padding: 12px 25px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 8px 5px;
+     cursor: pointer;
+     border-radius: 5px;
+     font-weight: bold;
+     transition: background-color 0.2s ease;
+     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.ad-placeholder .ad-buttons button:hover {
+    background-color: #1b5e20; /* Even darker green on hover */
+}
+
+ .ad-placeholder .ad-buttons button i {
+     margin-right: 8px;
+ }
+
+/* Bottom Banner Ad */
+.ad-placeholder.ad-bottom-banner {
+    padding: 0; /* Remove padding if image fills */
+    border: none; /* Remove border if image fills */
+    background-color: transparent; /* No background if image fills */
+    min-height: unset; /* Let image define height */
+    margin: 40px 0 20px 0; /* Adjust margin */
+}
+.ad-placeholder.ad-bottom-banner img {
+     width: 100%; /* Ensure banner takes full width */
+     display: block; /* Remove extra space below image */
+     margin-top: 0;
+}
+.ad-placeholder.ad-bottom-banner .ad-label {
+     display: none; /* Hide label if image is self-explanatory */
+}
+
+
+/* --- Chapter Navigation --- */
+.chapter-navigation {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #eee; /* Separator line */
+    text-align: center;
+}
+
+.chapter-navigation .btn-nav {
+    display: inline-block;
+    padding: 10px 25px;
+    margin: 0 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px; /* Pill shape */
+    font-weight: bold;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+.chapter-navigation .btn-nav:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3);
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Specific Button Styles */
+.chapter-navigation .index-button {
+    background-color: #17a2b8; /* Teal for Index */
+    box-shadow: 0 2px 5px rgba(23, 162, 184, 0.2);
+}
+.chapter-navigation .index-button:hover {
+    background-color: #117a8b;
+    box-shadow: 0 4px 8px rgba(17, 122, 139, 0.3);
+}
+
+.chapter-navigation .prev-button,
+.chapter-navigation .next-button {
+    background-color: #6c757d; /* Grey */
+    box-shadow: 0 2px 5px rgba(108, 117, 125, 0.2);
+}
+.chapter-navigation .prev-button:hover,
+.chapter-navigation .next-button:hover {
+     background-color: #5a6268;
+     box-shadow: 0 4px 8px rgba(90, 98, 104, 0.3);
+}
+
+/* Disabled State (Example: Prev on Ch1, Next on last Ch) */
+.chapter-navigation .btn-nav.disabled {
+     background-color: #e9ecef;
+     color: #adb5bd;
+     pointer-events: none; /* Make it unclickable */
+     box-shadow: none;
+     transform: none;
+}
+
+
+.chapter-navigation .btn-nav i { /* Icon spacing */
+    margin-right: 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* --- "You'll Also Like" Section --- */
+.also-like-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+ .also-like-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #444;
+    font-size: 1.5em;
+    font-weight: 600;
+ }
+
+.also-like-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+}
+
+.also-like-grid a {
+    display: block;
+    text-decoration: none;
+    overflow: hidden; /* Ensure hover effect stays within bounds */
+    border-radius: 4px;
+}
+
+.also-like-grid img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ .also-like-grid a:hover img {
+     transform: scale(1.08); /* Zoom effect on hover */
+     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+ }
+
+/* --- Optional: Simplify header/footer on chapter pages --- */
+ /* Uncomment if you want a simpler header/footer on chapter reads */
+/*
+ body.chapter-page .site-header .header-center,
+ body.chapter-page .site-header .main-nav .btn-primary,
+ body.chapter-page .site-header .main-nav a:not(:first-child):not(:last-child), // Hide middle nav links
+ body.chapter-page .site-header .main-nav button#theme-toggle { // Keep theme toggle
+     display: none;
+ }
+ body.chapter-page .site-footer .footer-links {
+     display: none;
+ }
+ body.chapter-page .site-footer .footer-container {
+     justify-content: center; // Center logo/copyright if links removed
+     text-align: center;
+ }
+*/
