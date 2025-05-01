@@ -10,72 +10,35 @@
 <body>
 
     <!-- Re-use the same header -->
+   
     <header class="site-header">
-        <div class="container header-content">
+        <div class="container header-container">
             <div class="logo">
-                <a href="home.html">MangaBox</a> <!-- Link to home -->
+                <img src="Logo.png" alt="FanMTL Logo">
             </div>
             <nav class="main-nav">
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="#">Manga List</a></li>
-                    <li><a href="#">Bookmarks</a></li>
-                     <li><a href="about-us.html" class="active">About Us</a></li> <!-- Add link to this page -->
-                </ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contactus.html">Contact</a>
             </nav>
-             <div class="search-bar">
-                <input type="text" placeholder="Search manga...">
-                <button>Search</button>
-            </div>
         </div>
     </header>
 
     <main class="main-content">
         <div class="container">
 
-            <!-- Split layout container -->
-            <div class="about-us-split">
+            <!-- Using content-box for consistent padding/background like other pages -->
+            <div class="about-us-content content-box"> <!-- Renamed class for clarity -->
 
-                <!-- Text Content Area (Left) -->
-                <div class="about-text-content">
-                    <p class="about-category">About Us</p>
-                    <h2>Welcome to Manga Box – your go-to place for manga lovers!</h2>
+                <!-- START: Updated Content -->
+                <h1>About Us</h1> <!-- Changed to H1 for primary page title -->
 
-                    <p>We created this platform to share our passion for manga with fans from around the world. Whether you're a casual reader or a hardcore otaku, you'll find something to enjoy here. We offer:</p>
+                <h2>Welcome to mangabox.in!</h2>
 
-                    <ul>
-                        <li>Summaries of popular manga series</li>
-                        <li>Character breakdowns and arcs</li>
-                        <li>Chapter-wise updates and overviews</li>
-                        <li>Handpicked recommendations</li>
-                    </ul>
+                <p>This is a creative space where original stories come to life. I’m a solo author writing and sharing novels across various genres, all published right here. Each piece is crafted with passion and aimed at readers who love immersive storytelling.</p>
 
-                    <p>Our goal is to make manga more accessible and enjoyable, especially for those who want quick reads, helpful guides, or insights into their favorite series.</p>
-
-                    <p>We believe in original content, clean design, and providing value to our readers.</p>
-
-                    <p>Thanks for visiting – we hope you enjoy the site!</p>
-
-                    <hr class="about-separator"> <!-- Optional separator -->
-
-                    <p><strong>Want to stay in touch or give feedback?</strong><br>
-                       Click the button below for our contact details — we’d love to hear from you!</p> <!-- Updated prompt text -->
-
-                    <!-- Changed <a> to <button>, removed href, added id -->
-                    <button type="button" id="show-contact-btn" class="btn about-button">Show Contact Info</button>
-
-                    <!-- Hidden container for contact details -->
-                    <div id="contact-details" style="display: none;">
-                        <p><strong>Phone:</strong> 7207581690</p>
-                        <p><strong>Email:</strong> baqerali621@gmail.com</p>
-                    </div>
-
-                </div>
-
-                <!-- Image Area (Right) -->
-                <div class="about-image-content">
-                    <img src="https://via.placeholder.com/550x650/EEEEEE/333333?text=Manga+Art+Placeholder" alt="Illustration representing manga or the website's theme">
-                </div>
+                <p>Whether you’re into romance, fantasy, adventure, or mystery, I hope you find something here to enjoy. Thanks for reading and supporting independent writing!</p>
+                <!-- END: Updated Content -->
 
             </div>
 
@@ -83,44 +46,35 @@
     </main>
 
     <!-- Re-use the same footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <p>© 2023 MangaClone. All rights reserved. (This is a clone for educational purposes).</p>
-            <nav class="footer-nav">
-                <a href="about.html">About Us</a> |
-                <a href="contactus.html">Contact</a> |
-                <a href="privacy.html">Privacy Policy</a> |
-                <a href="">Terms of Service</a>
-            </nav>
-        </div>
-    </footer>
+   <footer class="site-footer">
+        <div class="container footer-container">
+             <div class="footer-logo">
+                 <img src="Logo.png" alt="FanMTL Logo">
+                 <p>mangabox.com</p>
+                 <p class="copyright">© 2025 mangabox.com</p>
+             </div>
+             <div class="footer-links">
+                 <ul class="link-column">
+                     <li><a href="idle.html">Most Popular</a></li>
+                     <li><a href="bill.html">Latest Chapters</a></li>
+                     <li><a href="ash.html">Recent Novels</a></li>
+                     <li><a href="idle.html">Action</a></li>
+                     <li><a href="copy.html">Copy right</a></li>
+                 </ul>
+                 <ul class="link-column">
+                     <li><a href="privacy.html">Privacy Policy</a></li>
+                     <li><a href="terms.html">Terms of Service</a></li>
+                     <li><a href="about.html">About Us</a></li>
+                     <li><a href="contactus.html">Contact Us</a></li>
+                 </ul>
+             </div>
+         </div>
+     </footer>
+
 
     <!-- Re-use the same sticky footer ad -->
-    <div class="sticky-footer-ad">
-        <img src="https://via.placeholder.com/728x90/AAAAAA/FFFFFF?text=Sticky+Ad+Placeholder+(728x90)" alt="Sticky Footer Advertisement">
-    </div>
 
-    <!-- JavaScript for the button click -->
-    <script>
-        // Wait for the DOM to be fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the button element by its ID
-            const contactButton = document.getElementById('show-contact-btn');
-            // Get the hidden contact details container by its ID
-            const contactDetailsDiv = document.getElementById('contact-details');
-
-            // Check if both elements exist to avoid errors
-            if (contactButton && contactDetailsDiv) {
-                // Add an event listener for the 'click' event on the button
-                contactButton.addEventListener('click', function() {
-                    // Change the display style of the contact details div from 'none' to 'block'
-                    contactDetailsDiv.style.display = 'block';
-                    // Optional: You might want to hide the button after clicking
-                    // contactButton.style.display = 'none';
-                });
-            }
-        });
-    </script>
+    <!-- Removed the JavaScript block for the contact button -->
 
 </body>
 </html>

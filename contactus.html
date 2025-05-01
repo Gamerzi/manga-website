@@ -10,23 +10,17 @@
 <body>
 
     <!-- Re-use the same header -->
+   
     <header class="site-header">
-        <div class="container header-content">
+        <div class="container header-container">
             <div class="logo">
-                <a href="home.html">MangaClone</a> <!-- Link to home -->
+                <img src="Logo.png" alt="FanMTL Logo">
             </div>
             <nav class="main-nav">
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="#">Manga List</a></li>
-                    <li><a href="#">Bookmarks</a></li>
-                     <li><a href="about-us.html">About Us</a></li>
-                </ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contactus.html">Contact</a>
             </nav>
-             <div class="search-bar">
-                <input type="text" placeholder="Search manga...">
-                <button>Search</button>
-            </div>
         </div>
     </header>
 
@@ -35,27 +29,16 @@
             <!-- Use content-box for consistent background/padding -->
             <div class="contact-page-content content-box">
 
+                <!-- START: Updated Content -->
                 <h1>Contact Us</h1>
 
-                <p class="contact-intro">Have questions, suggestions, or just want to say hello? We’d love to hear from you!</p>
-                <p class="contact-intro">You can reach us through the following:</p>
+                <p>Have a question, suggestion, or just want to say hello?</p>
 
-                <hr class="contact-separator">
-
-                <div class="contact-methods">
-                    <div class="contact-method">
-                         <span class="contact-label">Email:</span>
-                         <a href="mailto:baqerali621@gmail.com" class="contact-link">baqerali621@gmail.com</a>
-                    </div>
-                     <div class="contact-method">
-                         <span class="contact-label">Phone:</span>
-                         <a href="tel:7207581690" class="contact-link">720-758-1690</a> <!-- Optional formatting -->
-                    </div>
-                </div>
-
-                 <hr class="contact-separator">
-
-                 <p class="contact-privacy">We respect your privacy. Any information you share with us will be kept private and only used to respond to your message.</p>
+                <p>
+                    <span class="contact-label">Email:</span>
+                    <a href="mailto:mangaboxhelp@gmail.com" class="contact-link">mangaboxhelp@gmail.com</a>
+                </p>
+                <!-- END: Updated Content -->
 
             </div>
         </div> <!-- /.container -->
@@ -63,21 +46,32 @@
 
     <!-- Re-use the same footer -->
     <footer class="site-footer">
-        <div class="container">
-            <p>© 2023 MangaClone. All rights reserved. (This is a clone for educational purposes).</p>
-            <nav class="footer-nav">
-                <a href="about.html">About Us</a> |
-                <a href="contactus.html">Contact</a> |
-                <a href="privacy.html">Privacy Policy</a> |
-                <a href="">Terms of Service</a>
-            </nav>
-        </div>
-    </footer>
+        <div class="container footer-container">
+             <div class="footer-logo">
+                 <img src="Logo.png" alt="FanMTL Logo">
+                 <p>mangabox.com</p>
+                 <p class="copyright">© 2025 mangabox.com</p>
+             </div>
+             <div class="footer-links">
+                 <ul class="link-column">
+                     <li><a href="idle.html">Most Popular</a></li>
+                     <li><a href="bill.html">Latest Chapters</a></li>
+                     <li><a href="ash.html">Recent Novels</a></li>
+                     <li><a href="idle.html">Action</a></li>
+                     <li><a href="copy.html">Copy right</a></li>
+                 </ul>
+                 <ul class="link-column">
+                     <li><a href="privacy.html">Privacy Policy</a></li>
+                     <li><a href="terms.html">Terms of Service</a></li>
+                     <li><a href="about.html">About Us</a></li>
+                     <li><a href="contactus.html">Contact Us</a></li>
+                 </ul>
+             </div>
+         </div>
+     </footer>
 
-    <!-- Re-use the same sticky footer ad -->
-    <div class="sticky-footer-ad">
-        <img src="https://via.placeholder.com/728x90/AAAAAA/FFFFFF?text=Sticky+Ad+Placeholder+(728x90)" alt="Sticky Footer Advertisement">
-    </div>
+
+   
 
     <!-- Link to JS if needed, otherwise remove -->
     <!-- <script src="script.js"></script> -->

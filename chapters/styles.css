@@ -118,7 +118,7 @@ ul {
 }
 
 .logo img {
-    height: 35px;
+    height: 45px;
     margin-right: 8px;
     content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAQlBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgSfImAAAAD3RSTlMAAQIDBQYKEhUdICE+QlJscHSLj5SxuMXG3ubv8fX4+ff6o8BRAAAApElEQVR42uzYUQ7AMAgEwN//WF86EApsC8T8EP4l0yUYsQHdAADGTEJEujVCUjf7wKER4jkeoDkQ3QjAixhxDkT3LAcg+aAdIMMfgACDOQLA6X/D9R3gFAGSAF8BASA+8+A9ArwB0ADwF4A/gDtAAPEBOAAgAPwL4A/gDgAfwL8A/gD+Af4B9ATgC+AL4AvgC+AL4AvQD4A/gH8A/wD/AP8A/wD/AK/oA/gA+AEFAQD/7gElDoOcAAAAAElFTkSuQmCC');
 }
@@ -421,7 +421,7 @@ body.dark-mode .novel-cover {
 }
 
 .footer-logo img {
-    height: 35px; /* Adjusted size to match image */
+    height: 65px; /* Adjusted size to match image */
     margin-bottom: 8px;
 }
 
@@ -521,6 +521,7 @@ body.dark-mode .novel-cover {
         gap: 10px;
     }
     .logo {
+        display: none;
         align-self: flex-start;
     }
     .header-center {

@@ -84,7 +84,6 @@ a:hover {
 
 img {
     max-width: 100%;
-    height: auto;
     vertical-align: middle;
 }
 
@@ -92,6 +91,7 @@ ul {
     list-style: none;
 }
 
+/* --- HEADER STYLES --- */
 .site-header {
     background-color: var(--bg-secondary-color);
     padding: 10px 0;
@@ -107,90 +107,70 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
 }
 
 .logo img {
-    height: 35px;
-    margin-right: 8px;
-    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAQlBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgSfImAAAAD3RSTlMAAQIDBQYKEhUdICE+QlJscHSLj5SxuMXG3ubv8fX4+ff6o8BRAAAApElEQVR42uzYUQ7AMAgEwN//WF86EApsC8T8EP4l0yUYsQHdAADGTEJEujVCUjf7wKER4jkeoDkQ3QjAixhxDkT3LAcg+aAdIMMfgACDOQLA6X/D9R3gFAGSAF8BASA+8+A9ArwB0ADwF4A/gDtAAPEBOAAgAPwL4A/gDgAfwL8A/gD+Af4B9ATgC+AL4AvgC+AL4AvQD4A/gH8A/wD/AP8A/wD/AK/oA/gA+AEFAQD/7gElDoOcAAAAAElFTkSuQmCC');
-}
-body.dark-mode .logo img {
-    filter: brightness(0.8) contrast(1.2);
-}
-
-.header-center {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    min-width: 200px;
-}
-
-.search-form {
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color-light);
-    border-radius: 20px;
-    padding: 0px 5px 0px 15px;
-    max-width: 400px;
-    width: 100%;
-}
-
-.search-form input[type="search"] {
-    flex-grow: 1;
-    border: none;
-    background: none;
-    padding: 8px 5px;
-    font-size: 0.95em;
-    color: var(--text-color);
-    outline: none;
-}
-.search-form input[type="search"]::placeholder {
-    color: var(--text-color-muted);
-    opacity: 1;
-}
-
-.search-form button[type="submit"] {
-    background: none;
-    border: none;
-    color: var(--text-color-secondary);
-    padding: 8px 10px;
-    cursor: pointer;
-    font-size: 1em;
-    line-height: 1;
-}
-.search-form button[type="submit"]:hover {
-    color: var(--link-color);
+    height: 70px;
+    width: auto;
+    margin-right: 10px;
 }
 
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 20px;
-    flex-wrap: nowrap;
+    gap: 30px;
 }
 
 .main-nav a {
-    color: var(--text-color-secondary);
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 600;
     padding: 5px 0;
     white-space: nowrap;
+    position: relative;
+    transition: color 0.2s;
 }
+
 .main-nav a:hover {
     color: var(--link-color);
     text-decoration: none;
 }
 
+/* Added underline effect on hover */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--link-color);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Active link styling */
+.main-nav a.active {
+    color: var(--link-color);
+}
+
+.main-nav a.active::after {
+    width: 100%;
+}
+
+/* Theme toggle button - preserved from original */
 .theme-toggle {
     background: none;
     border: 1px solid var(--border-color-med);
@@ -216,9 +196,10 @@ body.dark-mode .theme-toggle i.fa-moon {
     transform: rotate(40deg);
 }
 body:not(.dark-mode) .theme-toggle i.fa-sun {
-     transform: rotate(40deg);
+    transform: rotate(40deg);
 }
 
+/* --- FILTER SECTION --- */
 .filter-section {
     background-color: var(--bg-secondary-color);
     padding: 15px;
@@ -271,6 +252,7 @@ body:not(.dark-mode) .theme-toggle i.fa-sun {
     border-color: var(--button-active-border);
 }
 
+/* --- PAGINATION --- */
 .pagination {
     margin-top: 20px;
     margin-bottom: 15px;
@@ -307,6 +289,7 @@ body:not(.dark-mode) .theme-toggle i.fa-sun {
     padding: 6px 0;
 }
 
+/* --- LISTING STYLES --- */
 .list-separator {
     height: 3px;
     background: linear-gradient(to right, var(--gradient-start), var(--gradient-mid1), var(--gradient-mid2), var(--gradient-mid3), var(--gradient-mid4), var(--gradient-mid5), var(--gradient-end));
@@ -398,31 +381,33 @@ body.dark-mode .novel-cover {
     font-weight: bold;
 }
 
-/* --- FOOTER STYLES UPDATED FOR EVEN SPREAD --- */
+/* --- FOOTER STYLES --- */
 .site-footer {
     background-color: var(--bg-secondary-color);
-    padding: 30px 0; /* Adjusted padding */
+    padding: 30px 0;
     margin-top: 30px;
     border-top: 1px solid var(--border-color);
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-between; /* Keep space between logo and links area */
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 20px; /* Gap between logo area and links area */
+    gap: 20px;
 }
 
 .footer-logo {
-    flex-basis: 30%; /* Give logo area about 30% width */
+    flex-basis: 30%;
     flex-shrink: 0;
-    padding-right: 15px; /* Space between logo and first link column */
+    padding-right: 15px;
 }
 
 .footer-logo img {
-    height: 35px; /* Adjusted size to match image */
-    margin-bottom: 8px;
+    height: 100px;
+    width: auto;
+    margin-bottom: 10px;
+    display: block;
 }
 
 .footer-logo p {
@@ -441,17 +426,17 @@ body.dark-mode .novel-cover {
 
 .footer-links {
     display: flex;
-    flex-basis: 65%; /* Give links area about 65% width */
-    justify-content: space-around; /* Distribute the two columns evenly within this area */
-    flex-wrap: wrap; /* Allow wrapping if needed */
-    gap: 20px; /* Gap between the link columns themselves */
+    flex-basis: 65%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .link-column {
-    min-width: 150px; /* Keep a minimum width */
-    flex-grow: 1; /* Allow columns to grow */
-    flex-basis: 40%; /* Aim for roughly equal width initially */
-    max-width: 200px; /* Prevent columns from getting too wide */
+    min-width: 150px;
+    flex-grow: 1;
+    flex-basis: 40%;
+    max-width: 200px;
 }
 
 .link-column li {
@@ -464,7 +449,7 @@ body.dark-mode .novel-cover {
     text-decoration: none;
     display: inline-block;
     position: relative;
-    padding-left: 15px; /* Increased space for '>' */
+    padding-left: 15px;
 }
 
 .link-column a::before {
@@ -480,121 +465,112 @@ body.dark-mode .novel-cover {
     color: var(--link-color);
     text-decoration: underline;
 }
-/* --- END FOOTER STYLE UPDATES --- */
 
-
+/* --- RESPONSIVE STYLES --- */
 @media (max-width: 992px) {
-     .footer-logo {
-        flex-basis: 35%; /* Adjust basis */
-     }
-     .footer-links {
-        flex-basis: 60%;
-        justify-content: space-between; /* Might look better than space-around */
-     }
-     .link-column {
-        flex-basis: 45%; /* Adjust basis */
-        max-width: none; /* Remove max-width */
-     }
-     .header-center {
-        order: 3;
-        width: 100%;
-        margin-top: 10px;
-        padding: 0 10px;
-        justify-content: flex-start;
+    .site-header {
+        padding: 5px 0;
     }
-     .search-form {
-         max-width: none;
-     }
-     .main-nav {
-         order: 2;
-     }
-     .logo {
-         order: 1;
-     }
+    
+    .logo img {
+        height: 80px;
+    }
+    
+    .main-nav {
+        gap: 20px;
+    }
 }
-
 
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-    .logo {
-        align-self: flex-start;
+    
+    .logo img {
+        height: 60px;
     }
-    .header-center {
-        order: 2;
-        margin-top: 0;
-        padding: 0;
-     }
-     .main-nav {
-        order: 3;
-        justify-content: center;
-        margin-top: 5px;
-        gap: 15px;
-     }
-
+    
+    .main-nav {
+        gap: 20px;
+    }
+    
     .novel-grid {
         grid-template-columns: 1fr;
         gap: 15px 0;
     }
-     .novel-grid article {
-         border-bottom: 1px dashed var(--border-color);
-     }
-     .novel-grid article:last-child {
+    
+    .novel-grid article {
+        border-bottom: 1px dashed var(--border-color);
+    }
+    
+    .novel-grid article:last-child {
         border-bottom: none;
     }
-
+    
     .footer-container {
         flex-direction: column;
-        align-items: center; /* Center align stacked items */
+        align-items: center;
         text-align: center;
-        gap: 25px; /* Increase gap when stacked */
+        gap: 25px;
     }
+    
     .footer-logo {
-        flex-basis: auto; /* Reset basis */
-        padding-right: 0; /* Remove padding */
-        width: 100%; /* Take full width */
-    }
-    .footer-links {
-        flex-basis: auto; /* Reset basis */
+        flex-basis: auto;
+        padding-right: 0;
         width: 100%;
-        flex-direction: column; /* Stack the columns */
-        align-items: center; /* Center columns */
-        gap: 20px; /* Gap between stacked columns */
     }
+    
+    .footer-logo img {
+        height: 80px;
+        margin: 0 auto 10px;
+    }
+    
+    .footer-links {
+        flex-basis: auto;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
     .link-column {
-         text-align: center; /* Center text within columns */
-         width: auto; /* Let content define width */
+        text-align: center;
+        width: auto;
     }
 }
 
 @media (max-width: 480px) {
+    .logo img {
+        height: 56px;
+    }
+    
+    .main-nav {
+        gap: 15px;
+        font-size: 0.95em;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
     .novel-item {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
+    
     .novel-cover {
-         width: 120px;
-         height: 170px;
-         margin-bottom: 10px;
+        width: 120px;
+        height: 170px;
+        margin-bottom: 10px;
     }
-     .novel-meta .meta-item {
+    
+    .novel-meta .meta-item {
         display: inline-block;
         margin-right: 10px;
         margin-bottom: 5px;
     }
-     .novel-meta .meta-item:last-child {
+    
+    .novel-meta .meta-item:last-child {
         margin-right: 0;
     }
-
-    .main-nav {
-        gap: 10px;
-        font-size: 0.95em;
-    }
-     .search-form input[type="search"] {
-         font-size: 0.9em;
-     }
 }

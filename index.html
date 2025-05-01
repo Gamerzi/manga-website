@@ -12,19 +12,18 @@
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
-                <img src="placeholder-logo.png" alt="FanMTL Logo">
-            </div>
-            <div class="header-center">
-                <form class="search-form" action="#" method="get">
-                    <input type="search" name="query" placeholder="Search novels..." aria-label="Search novels">
-                    <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
-                </form>
+                <!-- Make sure Logo.png exists in the same directory or provide the correct path -->
+                <img src="Logo.png" alt="FanMTL Logo">
             </div>
             <nav class="main-nav">
-                <a href="#">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contactus.html">Contact</a>
             </nav>
+            <!-- Theme toggle button can be added here if needed -->
+            <!-- <button class="theme-toggle" id="theme-toggle-btn">
+                <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
+            </button> -->
         </div>
     </header>
 
@@ -37,6 +36,7 @@
                     <a href="bill.html" class="tag-button active">Billionaire</a>
                     <a href="ash.html" class="tag-button">Action</a>
                     <a href="idle.html" class="tag-button">Romance</a>
+                    <!-- Add more genres -->
                 </div>
             </div>
             <div class="filter-group">
@@ -56,18 +56,20 @@
                 </div>
             </div>
         </section>
+
         <section class="novel-list-section">
             <nav class="pagination top-pagination">
                 <span class="page-numbers current">1</span>
-                <a href="#" class="page-numbers">2</a>
-                <a href="#" class="page-numbers next">></a>
-                <a href="#" class="page-numbers last">>></a>
+                <a href="idle.html" class="page-numbers">2</a>
+                <a href="bill.html" class="page-numbers next">></a>
+                <a href="ash.html" class="page-numbers last">>></a>
             </nav>
             <div class="list-separator"></div>
 
             <div class="novel-grid">
+                <!-- Story 1 -->
                 <article class="novel-item">
-                    <a href="#" class="novel-cover-link">
+                    <a href="idle.html" class="novel-cover-link">
                         <img src="1st.jpeg" alt="Idle Guy Cover" class="novel-cover">
                     </a>
                     <div class="novel-details">
@@ -81,8 +83,9 @@
                     </div>
                 </article>
 
+                <!-- Story 2 -->
                 <article class="novel-item">
-                    <a href="#" class="novel-cover-link">
+                    <a href="bill.html" class="novel-cover-link">
                         <img src="2nd.jpeg" alt="Guarding the Billionaire's Blossom Cover" class="novel-cover">
                     </a>
                     <div class="novel-details">
@@ -90,13 +93,14 @@
                         <p class="novel-meta">
                             <span class="meta-item"><i class="fas fa-book-open"></i> 8 Chapters</span>
                             <span class="meta-item"><i class="fas fa-clock"></i> ≈ 25 days ago</span>
-                            <span class="meta-item"><i class="fas fa-check-circle"></i> <span class="Status--Ongoing">Status: Ongoing</span></span>
+                            <span class="meta-item"><i class="fas fa-tasks"></i> <span class="Status--Ongoing">Status: Ongoing</span></span> <!-- Changed icon for ongoing -->
                         </p>
                     </div>
                 </article>
 
+                 <!-- Story 3 -->
                  <article class="novel-item">
-                    <a href="#" class="novel-cover-link">
+                    <a href="ash.html" class="novel-cover-link">
                         <img src="3rd.jpeg" alt="Ashes of the Forgotten Cover" class="novel-cover">
                     </a>
                     <div class="novel-details">
@@ -104,25 +108,102 @@
                         <p class="novel-meta">
                             <span class="meta-item"><i class="fas fa-book-open"></i> 5 Chapters</span>
                             <span class="meta-item"><i class="fas fa-clock"></i> ≈ 5 days ago</span>
-                            <span class="meta-item"><i class="fas fa-check-circle"></i> <span class="Status--Ongoing">Status: Ongoing</span></span>
+                            <span class="meta-item"><i class="fas fa-tasks"></i> <span class="Status--Ongoing">Status: Ongoing</span></span> <!-- Changed icon for ongoing -->
                         </p>
                     </div>
                 </article>
 
-            </div>
+                <!-- Story 4 - NEW -->
+                <article class="novel-item">
+                    <a href="./chapters/c1.html" class="novel-cover-link"> <!-- Add correct link -->
+                        <img src="chrono.jpeg" alt="ChronoShatter Cover" class="novel-cover"> <!-- Add correct image -->
+                    </a>
+                    <div class="novel-details">
+                        <h4 class="novel-title"><a href="chrono.html">ChronoShatter: The Rift Wars</a></h4> <!-- Add correct link -->
+                        <p class="novel-meta">
+                            <span class="meta-item"><i class="fas fa-book-open"></i> 12 Chapters</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> ≈ 3 days ago</span> <!-- Placeholder time -->
+                            <span class="meta-item"><i class="fas fa-tasks"></i> <span class="Status--Ongoing">Status: Ongoing</span></span>
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Story 5 - NEW -->
+                <article class="novel-item">
+                    <a href="./chapters/s1.html" class="novel-cover-link"> <!-- Add correct link -->
+                        <img src="shadow.jpeg" alt="Shadow Circuit Cover" class="novel-cover"> <!-- Add correct image -->
+                    </a>
+                    <div class="novel-details">
+                        <h4 class="novel-title"><a href="shadow.html">Shadow Circuit: The Arcane Protocol</a></h4> <!-- Add correct link -->
+                        <p class="novel-meta">
+                            <span class="meta-item"><i class="fas fa-book-open"></i> 12 Chapters</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> ≈ 7 days ago</span> <!-- Placeholder time -->
+                            <span class="meta-item"><i class="fas fa-check-circle"></i> <span class="Status--Completed">Status: Completed</span></span>
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Story 6 - NEW -->
+                <article class="novel-item">
+                    <a href="./chapters/f1.html" class="novel-cover-link"> <!-- Add correct link -->
+                        <img src="fractured.jpeg" alt="Fractured realms Cover" class="novel-cover"> <!-- Add correct image -->
+                    </a>
+                    <div class="novel-details">
+                        <h4 class="novel-title"><a href="fact.html">Fractured realms</a></h4> <!-- Add correct link -->
+                        <p class="novel-meta">
+                            <span class="meta-item"><i class="fas fa-book-open"></i> 5 Chapters</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> ≈ 1 day ago</span> <!-- Placeholder time -->
+                            <span class="meta-item"><i class="fas fa-tasks"></i> <span class="Status--Ongoing">Status: Ongoing</span></span>
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Story 7 - NEW -->
+                <article class="novel-item">
+                    <a href="./chapters/ch1.html" class="novel-cover-link"> <!-- Add correct link -->
+                        <img src="abyss.jpeg" alt="Abyss Requiem Cover" class="novel-cover"> <!-- Add correct image -->
+                    </a>
+                    <div class="novel-details">
+                        <h4 class="novel-title"><a href="abyss.html">Abyss Requiem</a></h4> <!-- Add correct link -->
+                        <p class="novel-meta">
+                            <span class="meta-item"><i class="fas fa-book-open"></i> 5 Chapters</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> ≈ 9 days ago</span> <!-- Placeholder time -->
+                            <span class="meta-item"><i class="fas fa-tasks"></i> <span class="Status--Ongoing">Status: Ongoing</span></span>
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Story 8 - NEW -->
+                <article class="novel-item">
+                    <a href="./chapters/af1.html" class="novel-cover-link"> <!-- Add correct link -->
+                        <img src="veins.jpeg" alt="Veins of the Abyss Cover" class="novel-cover"> <!-- Add correct image -->
+                    </a>
+                    <div class="novel-details">
+                        <h4 class="novel-title"><a href="Veins.html">Veins of the Abyss</a></h4> <!-- Add correct link -->
+                        <p class="novel-meta">
+                            <span class="meta-item"><i class="fas fa-book-open"></i> 15 Chapters</span> <!-- Showing completed chapters -->
+                            <span class="meta-item"><i class="fas fa-clock"></i> ≈ 2 hours ago</span> <!-- Placeholder time -->
+                            <span class="meta-item"><i class="fas fa-check-circle"></i> <span class="Status--Completed">Status: Completed</span></span>
+                        </p>
+                    </div>
+                </article>
+
+            </div><!-- End novel-grid -->
 
              <nav class="pagination bottom-pagination">
                 <span class="page-numbers current">1</span>
-                <a href="#" class="page-numbers">2</a>
-                <a href="#" class="page-numbers next">></a>
-                <a href="#" class="page-numbers last">>></a>
+                <a href="bill.html" class="page-numbers">2</a>
+                <a href="idle.html" class="page-numbers next">></a>
+                <a href="ash.html" class="page-numbers last">>></a>
             </nav>
         </section>
     </main>
+
      <footer class="site-footer">
         <div class="container footer-container">
              <div class="footer-logo">
-                 <img src="placeholder-logo.png" alt="FanMTL Logo">
+                 <!-- Make sure Logo.png exists -->
+                 <img src="Logo.png" alt="FanMTL Logo">
                  <p>MangaBox.com</p>
                  <p class="copyright">© 2025 mangabox.com</p>
              </div>
@@ -131,17 +212,20 @@
                      <li><a href="bill.html">Most Popular</a></li>
                      <li><a href="./chapters/30.html">Latest Chapters</a></li>
                      <li><a href="ash.html">Recent Novels</a></li>
-                     <li><a href="idle.html">Action</a></li>
+                     <li><a href="idle.html">Action</a></li> <!-- This seems duplicated, maybe link to a genre page -->
+                     <li><a href="copy.html">Copy rights</a></li>
                  </ul>
                  <ul class="link-column">
                      <li><a href="privacy.html">Privacy Policy</a></li>
-                     <li><a href="#">Terms of Service</a></li>
+                     <li><a href="terms.html">Terms of Service</a></li>
                      <li><a href="about.html">About Us</a></li>
                      <li><a href="contactus.html">Contact Us</a></li>
                  </ul>
              </div>
          </div>
      </footer>
-    <script src="script.js"></script>
+
+    <!-- Add your script.js if you have JS functionality -->
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>
